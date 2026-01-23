@@ -1,211 +1,210 @@
-import time
-import os
+import streamlit as st
+import pandas as pd
 from datetime import datetime
-from collections import deque
-from sklearn.ensemble import IsolationForest
-import numpy as np
+import os
 
-# ANSI color codes for terminal output
-RED = '\033[91m'
-YELLOW = '\033[93m'
-RESET = '\033[0m'
+# -----------------------------
+# Page Configuration (MUST be first Streamlit command)
+# -----------------------------
+st.set_page_config(
+    page_title="SRE Self-Healing Dashboard",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-# Global variables for anomaly detection
-log_timestamps = deque(maxlen=100)  # Keep last 100 log timestamps
-model = IsolationForest(contamination=0.1, random_state=42)
-is_model_trained = False
+# -----------------------------
+# Auto Refresh (Streamlit-safe)
+# -----------------------------
+REFRESH_DEFAULT = 2
+st.autorefresh(interval=REFRESH_DEFAULT * 1000, key="auto_refresh")
 
-def fix_database():
-    """
-    Execute database remediation steps
-    """
-    print("🔧 ACTION: Restarting Database Service...")
-    time.sleep(1)  # Simulate action taking time
-    
-    # Log the successful remediation
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_entry = f"[{timestamp}] SUCCESS: Database service restarted and connection restored\n"
-    
-    print("DEBUG: Writing to healed_incidents.log now...")
-    with open('healed_incidents.log', 'a') as f:
-        f.write(log_entry)
-        f.flush()  # Ensure data is written immediately
-    print("DEBUG: Write complete!")
-    
-def fix_cpu():
-    """
-    Execute CPU remediation steps
-    """
-    print("🔧 ACTION: Clearing temporary files and scaling resources...")
-    time.sleep(1)  # Simulate action taking time
-    
-    # Log the successful remediation
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_entry = f"[{timestamp}] SUCCESS: Temporary files cleared and resources scaled to handle load\n"
-    
-    print("DEBUG: Writing to healed_incidents.log now...")
-    with open('healed_incidents.log', 'a') as f:
-        f.write(log_entry)
-        f.flush()  # Ensure data is written immediately
-    print("DEBUG: Write complete!")
+# -----------------------------
+# Custom CSS (Dark Mode)
+# -----------------------------
+st.markdown("""
+<style>
+.main {
+    background-color: #0e1117;
+}
+.stMetric {
+    background-color: #262730;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #2e3039;
+}
+h1 {
+    color: #00ff88;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+.status-active {
+    background-color: #00ff88;
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.status-healing {
+    background-color: #ffaa00;
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+</style>
+""", unsafe_allow_html=True)
 
-def handle_frequency_anomaly():
-    """
-    Handle anomalies detected by frequency analysis
-    """
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_entry = f"[{timestamp}] SUCCESS: Frequency anomaly detected - scaling infrastructure to handle spike\n"
-    
-    print("🔧 ACTION: Unusual log frequency detected - scaling infrastructure...")
-    time.sleep(1)
-    
-    print("DEBUG: Writing to healed_incidents.log now...")
-    with open('healed_incidents.log', 'a') as f:
-        f.write(log_entry)
-        f.flush()
-    print("DEBUG: Write complete!")
+# -----------------------------
+# Header
+# -----------------------------
+st.markdown("# 🛡️ SRE SELF-HEALING DASHBOARD")
+st.markdown("### Real-Time Intelligent Monitoring System")
 
-def calculate_log_frequency():
-    """
-    Calculate logs per second over the last few seconds
-    """
-    if len(log_timestamps) < 2:
-        return 0.0
-    
-    # Calculate frequency over last 10 logs
-    recent_logs = list(log_timestamps)[-10:]
-    if len(recent_logs) < 2:
-        return 0.0
-    
-    time_span = recent_logs[-1] - recent_logs[0]
-    if time_span == 0:
-        return 0.0
-    
-    frequency = len(recent_logs) / time_span
-    return frequency
+# -----------------------------
+# Sidebar
+# -----------------------------
+with st.sidebar:
+    st.markdown("## 🎛️ Control Panel")
+    st.markdown("---")
 
-def detect_frequency_anomaly():
-    """
-    Use Isolation Forest to detect anomalous log frequencies
-    """
-    global is_model_trained
-    
-    # Need at least 20 data points to train
-    if len(log_timestamps) < 20:
-        return False
-    
-    # Calculate current frequency
-    current_freq = calculate_log_frequency()
-    
-    # Get historical frequencies
-    frequencies = []
-    timestamps_list = list(log_timestamps)
-    
-    for i in range(10, len(timestamps_list)):
-        window = timestamps_list[i-10:i]
-        if len(window) >= 2:
-            time_span = window[-1] - window[0]
-            if time_span > 0:
-                freq = len(window) / time_span
-                frequencies.append(freq)
-    
-    if len(frequencies) < 10:
-        return False
-    
-    # Train the model if not trained yet or retrain periodically
-    if not is_model_trained or len(frequencies) % 50 == 0:
-        X_train = np.array(frequencies).reshape(-1, 1)
-        model.fit(X_train)
-        is_model_trained = True
-    
-    # Predict if current frequency is an anomaly
-    X_current = np.array([[current_freq]])
-    prediction = model.predict(X_current)
-    
-    # -1 indicates anomaly
-    return prediction[0] == -1
+    status_placeholder = st.empty()
+    status_placeholder.markdown("<span class='status-active'>🟢 ACTIVE</span>", unsafe_allow_html=True)
 
-def tail_log_file(filename):
-    """
-    Continuously monitor a log file for new lines (like 'tail -f')
-    """
-    print(f"🔍 Agent is now watching {filename}...")
-    print("🤖 ML Model: Isolation Forest initialized for frequency analysis")
-    print("Press Ctrl+C to stop\n")
-    
-    # Wait for file to exist
-    while not os.path.exists(filename):
-        print(f"Waiting for {filename} to be created...")
-        time.sleep(1)
-    
-    with open(filename, 'r') as log_file:
-        # Move to the end of the file
-        log_file.seek(0, os.SEEK_END)
-        
+    st.markdown("### 🧠 ML Model")
+    st.info("Isolation Forest\nUnsupervised Anomaly Detection")
+
+    st.markdown("---")
+
+    filter_option = st.radio(
+        "Log Filter",
+        ["All Events", "ML Anomalies Only", "Database Errors Only", "CPU Issues Only"],
+        index=0
+    )
+
+    st.markdown("---")
+    refresh_rate = st.slider("Refresh Rate (seconds)", 1, 10, REFRESH_DEFAULT)
+
+# -----------------------------
+# Session State
+# -----------------------------
+if "last_incident_count" not in st.session_state:
+    st.session_state.last_incident_count = 0
+
+# -----------------------------
+# Main Logic
+# -----------------------------
+placeholder = st.empty()
+
+LOG_FILE = "healed_incidents.log"
+
+with placeholder.container():
+
+    if not os.path.exists(LOG_FILE):
+        st.warning("⏳ Waiting for incidents...")
+        st.info("The self-healing agent will log events here.")
+    else:
         try:
-            while True:
-                # Read new line
-                line = log_file.readline()
-                
-                if line:
-                    # Record timestamp for frequency analysis
-                    log_timestamps.append(time.time())
-                    
-                    # Process the new line
-                    process_log_line(line.strip())
-                    
-                    # Check for frequency anomalies
-                    if detect_frequency_anomaly():
-                        print(f"{YELLOW}⚠️  ML ANOMALY: Unusual log frequency detected!{RESET}")
-                        print(f"   Current frequency: {calculate_log_frequency():.2f} logs/sec\n")
-                        handle_frequency_anomaly()
-                        print("✅ Recovery action executed successfully. Checking system health...\n")
-                else:
-                    # No new line yet, wait a bit
-                    time.sleep(0.1)
-                    
-        except KeyboardInterrupt:
-            print("\n\n⛔ Monitoring stopped by user.")
+            df = pd.read_csv(
+                LOG_FILE,
+                sep=",",
+                names=["Timestamp", "Event"],
+                engine="python"
+            )
 
-def process_log_line(line):
-    """
-    Analyze each log line for errors and take action
-    """
-    if 'ERROR' in line:
-        # Alert in bright red
-        print(f"{RED}🚨 ANOMALY DETECTED: {line}{RESET}")
-        
-        # Brain: Determine the appropriate action based on error type
-        take_action(line)
-    else:
-        # Regular healthy line
-        print("Searching...")
+            df["Timestamp"] = pd.to_datetime(
+                df["Timestamp"].str.strip("[]"),
+                errors="coerce"
+            )
+            df.dropna(subset=["Timestamp"], inplace=True)
+            df["Event"] = df["Event"].astype(str)
 
-def take_action(error_line):
-    """
-    Decide what action to take based on the error message
-    """
-    print()  # Blank line for readability
-    
-    if 'Database' in error_line:
-        fix_database()
-        print("✅ Recovery action executed successfully. Checking system health...\n")
-        
-    elif 'CPU' in error_line:
-        fix_cpu()
-        print("✅ Recovery action executed successfully. Checking system health...\n")
-        
-    else:
-        print("⚠️  ACTION: Alerting human on-call SRE.")
-        print("📧 Alert sent to on-call engineer.\n")
+            # -----------------------------
+            # Filtering
+            # -----------------------------
+            filtered_df = df.copy()
 
-def main():
-    log_filename = "system.log"
-    print("=" * 60)
-    print("🤖 Self-Healing SRE Agent - Starting Up...")
-    print("🧠 Enhanced with Machine Learning (Isolation Forest)")
-    print("=" * 60)
-    tail_log_file(log_filename)
+            if filter_option == "ML Anomalies Only":
+                filtered_df = df[df["Event"].str.contains("scaling|frequency", case=False, na=False)]
+            elif filter_option == "Database Errors Only":
+                filtered_df = df[df["Event"].str.contains("database", case=False, na=False)]
+            elif filter_option == "CPU Issues Only":
+                filtered_df = df[df["Event"].str.contains("cpu|temporary", case=False, na=False)]
 
-if __name__ == "__main__":
-    main()
+            # -----------------------------
+            # Status Update
+            # -----------------------------
+            if len(df) > st.session_state.last_incident_count:
+                st.toast("🚨 Incident detected and auto-healed!", icon="✅")
+                status_placeholder.markdown(
+                    "<span class='status-healing'>🟡 HEALING</span>",
+                    unsafe_allow_html=True
+                )
+                st.session_state.last_incident_count = len(df)
+            else:
+                status_placeholder.markdown(
+                    "<span class='status-active'>🟢 ACTIVE</span>",
+                    unsafe_allow_html=True
+                )
+
+            # -----------------------------
+            # Metrics
+            # -----------------------------
+            col1, col2, col3, col4 = st.columns(4)
+
+            db_fixes = df[df["Event"].str.contains("database", case=False, na=False)].shape[0]
+            cpu_fixes = df[df["Event"].str.contains("cpu|temporary", case=False, na=False)].shape[0]
+            ml_fixes = df[df["Event"].str.contains("scaling|frequency", case=False, na=False)].shape[0]
+            total = len(df)
+
+            with col1:
+                st.metric("🗄️ Database Heals", db_fixes)
+            with col2:
+                st.metric("💻 CPU Optimizations", cpu_fixes)
+            with col3:
+                st.metric("🧠 ML Detections", ml_fixes)
+            with col4:
+                st.metric("🟢 System Health", "100%", "Optimal")
+
+            st.markdown("---")
+
+            # -----------------------------
+            # Chart
+            # -----------------------------
+            st.markdown("### 📈 Incident Frequency")
+            if not filtered_df.empty:
+                chart_df = filtered_df.copy()
+                chart_df["Minute"] = chart_df["Timestamp"].dt.floor("min")
+                counts = chart_df.groupby("Minute").size()
+                st.line_chart(counts)
+            else:
+                st.info("No incidents for selected filter.")
+
+            st.markdown("---")
+
+            # -----------------------------
+            # Table
+            # -----------------------------
+            st.markdown("### 📋 Recent Healing Events")
+
+            if not filtered_df.empty:
+                table_df = filtered_df.tail(15).copy()
+                table_df["Timestamp"] = table_df["Timestamp"].dt.strftime("%Y-%m-%d %H:%M:%S")
+                table_df["Status"] = "✅ Resolved"
+
+                st.dataframe(
+                    table_df[["Timestamp", "Event", "Status"]],
+                    use_container_width=True,
+                    hide_index=True
+                )
+            else:
+                st.info("No events to display.")
+
+            # -----------------------------
+            # Footer
+            # -----------------------------
+            st.markdown("---")
+            st.caption(f"🕒 Last Updated: {datetime.now().strftime('%H:%M:%S')}")
+
+        except Exception as e:
+            st.error(f"⚠️ Dashboard error: {e}")
+            st.info("Check healed_incidents.log formatting.")

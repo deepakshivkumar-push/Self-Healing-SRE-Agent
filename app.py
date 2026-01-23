@@ -44,7 +44,7 @@ def main():
                 write_log("INFO: System healthy")
             
             # Wait 2 seconds before next log entry
-            time.sleep(0.5)
+            time.sleep(2)
             
     except KeyboardInterrupt:
         print("\nLogger stopped by user.")
