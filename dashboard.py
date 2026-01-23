@@ -107,11 +107,14 @@ while True:
             continue
         
         # Read the log file
-        df = pd.read_csv('healed_incidents.log', names=['Timestamp', 'Event'], on_bad_lines='skip')
+        df = pd.read_csv('healed_incidents.log', names=['Timestamp', 'Event'], on_bad_lines='skip', dtype=str)
         
         # Parse timestamps
         df['Timestamp'] = pd.to_datetime(df['Timestamp'].str.strip('[]'), errors='coerce')
         df = df.dropna(subset=['Timestamp'])
+        
+        # Ensure Event column is string type
+        df['Event'] = df['Event'].astype(str)
         
         # Apply filters
         filtered_df = df.copy()
