@@ -54,6 +54,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Initialize session state BEFORE any UI elements
+if 'last_incident_count' not in st.session_state:
+    st.session_state.last_incident_count = 0
+if 'status_placeholder' not in st.session_state:
+    st.session_state.status_placeholder = None
+
 # Header
 st.markdown("# 🛡️ SRE SELF-HEALING DASHBOARD")
 st.markdown("### Real-Time Intelligent Monitoring System")
@@ -91,10 +97,6 @@ with st.sidebar:
 
 # Main Dashboard
 placeholder = st.empty()
-
-# Initialize session state for tracking
-if 'last_incident_count' not in st.session_state:
-    st.session_state.last_incident_count = 0
 
 while True:
     try:
