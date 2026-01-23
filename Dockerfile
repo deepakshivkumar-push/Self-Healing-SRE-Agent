@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. Start the "Patient" and "Agent" at the same time
 # We use a shell command to run app.py in the background and agent.py in the foreground
-CMD python app.py & python agent.py
+CMD ["sh", "-c", "python -u app.py & python -u agent.py"]
