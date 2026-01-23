@@ -3,4 +3,4 @@ WORKDIR /app
 COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 # The -u is the 'magic' that shows the logs in Railway
-CMD ["sh", "-c", "python -u app.py & python -u agent.py"]
+CMD ["sh", "-c", "python -u app.py & python -u agent.py & streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0"]

@@ -1,1 +1,1 @@
-# Self-Healing SRE Agent A Python-based agent that monitors logs and autonomously repairs system errors.
+# Self-Healing SRE Agent: Machine Learning-driven Anomaly Detection (Isolation Forest)
