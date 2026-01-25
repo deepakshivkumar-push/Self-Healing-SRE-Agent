@@ -1,6 +1,19 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
+
 WORKDIR /app
-COPY . .
+
+# Copy requirements and install dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-# The -u is the 'magic' that shows the logs in Railway
-CMD ["sh", "-c", "touch healed_incidents.log && python -u app.py & python -u agent.py & streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0"]
+
+# Copy application code
+COPY app.py .
+
+# Expose Flask port
+EXPOSE 5000
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+
+# Run the application
+CMD ["python", "app.py"]
