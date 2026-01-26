@@ -1,243 +1,300 @@
+# dashboard.py
+# Streamlit Dashboard - Visualizes self-healing events in real-time
+# Reads from healed_incidents.log and displays statistics
+
 import streamlit as st
-import pandas as pd
-import time
-from datetime import datetime, timedelta
 import os
+import time
+from datetime import datetime
+import re
+from collections import Counter
 
-# Professional dark mode configuration
-st.set_page_config(
-    page_title="SRE Self-Healing Dashboard",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+# Configuration
+HEALING_LOG = "data/healed_incidents.log"
+REFRESH_INTERVAL = 2  # Seconds between auto-refresh
 
-# Custom CSS for dark mode professional aesthetic
-st.markdown("""
-    <style>
-    .main {
-        background-color: #0e1117;
-    }
-    .stMetric {
-        background-color: #262730;
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #2e3039;
-    }
-    .metric-success {
-        color: #00ff88;
-    }
-    .metric-warning {
-        color: #ffaa00;
-    }
-    .metric-danger {
-        color: #ff4444;
-    }
-    h1 {
-        color: #00ff88;
-        font-weight: 700;
-        text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-    }
-    </style>
-""", unsafe_allow_html=True)
 
-# Initialize session state
-if 'last_incident_count' not in st.session_state:
-    st.session_state.last_incident_count = 0
-
-# Header
-st.markdown("# 🛡️ SRE SELF-HEALING DASHBOARD")
-st.markdown("### Real-Time Intelligent Monitoring System")
-
-# Sidebar - Professional Status Panel
-with st.sidebar:
-    st.markdown("## 🎛️ Control Panel")
-    st.markdown("---")
+def parse_healing_log_line(line):
+    """
+    Parse a single line from healed_incidents.log.
+    Expected format: [YYYY-MM-DD HH:MM:SS] SUCCESS: <ANOMALY_TYPE> - <message>
     
-    # Agent Status
-    st.markdown("### Agent Status")
+    Args:
+        line (str): A single log line
     
-    st.markdown("### ML Model")
-    st.info("🧠 **Isolation Forest**\nUnsupervised Anomaly Detection")
+    Returns:
+        dict: Parsed event with timestamp, anomaly_type, and message
+        None: If line cannot be parsed
+    """
+    # Regex to extract: [timestamp] SUCCESS: ANOMALY_TYPE - message
+    pattern = r'\[(.+?)\] SUCCESS: ([A-Z_]+) - (.+)'
+    match = re.match(pattern, line.strip())
     
-    st.markdown("---")
+    if match:
+        timestamp_str = match.group(1)
+        anomaly_type = match.group(2)
+        message = match.group(3)
+        
+        try:
+            # Parse timestamp
+            timestamp = datetime.strptime(timestamp_str, "%Y-%m-%d %H:%M:%S")
+            
+            return {
+                'timestamp': timestamp,
+                'anomaly_type': anomaly_type,
+                'message': message,
+                'timestamp_str': timestamp_str
+            }
+        except ValueError:
+            # Invalid timestamp format
+            return None
     
-    # Filter Options
-    st.markdown("### 📊 Log Filters")
-    filter_option = st.radio(
-        "Select View:",
-        ["All Events", "ML Anomalies Only", "Database Errors Only", "CPU Issues Only"],
-        index=0
+    return None
+
+
+def read_healing_events():
+    """
+    Read and parse all healing events from the log file.
+    Handles missing files and I/O errors gracefully.
+    
+    Returns:
+        list: List of parsed event dictionaries (newest first)
+        str: Error message if file cannot be read, or None if successful
+    """
+    # Check if file exists
+    if not os.path.exists(HEALING_LOG):
+        return [], "Log file not found. Waiting for healing events..."
+    
+    # Check if file is empty
+    if os.path.getsize(HEALING_LOG) == 0:
+        return [], "Log file is empty. Waiting for healing events..."
+    
+    events = []
+    
+    try:
+        with open(HEALING_LOG, 'r') as f:
+            lines = f.readlines()
+            
+            for line in lines:
+                if line.strip():  # Skip empty lines
+                    parsed = parse_healing_log_line(line)
+                    if parsed:
+                        events.append(parsed)
+        
+        # Return events in reverse chronological order (newest first)
+        events.reverse()
+        
+        return events, None
+        
+    except IOError as e:
+        return [], f"Error reading log file: {str(e)}"
+    except Exception as e:
+        return [], f"Unexpected error: {str(e)}"
+
+
+def calculate_statistics(events):
+    """
+    Calculate statistics from healing events.
+    
+    Args:
+        events (list): List of parsed event dictionaries
+    
+    Returns:
+        dict: Statistics including total count, type breakdown, and recent activity
+    """
+    if not events:
+        return {
+            'total': 0,
+            'db_errors': 0,
+            'cpu_errors': 0,
+            'other_errors': 0,
+            'last_healing': None
+        }
+    
+    # Count anomaly types
+    anomaly_types = [event['anomaly_type'] for event in events]
+    type_counts = Counter(anomaly_types)
+    
+    # Calculate statistics
+    stats = {
+        'total': len(events),
+        'db_errors': type_counts.get('DB_ERROR', 0),
+        'cpu_errors': type_counts.get('CPU_ERROR', 0),
+        'other_errors': sum(count for atype, count in type_counts.items() 
+                           if atype not in ['DB_ERROR', 'CPU_ERROR']),
+        'last_healing': events[0]['timestamp_str'] if events else None
+    }
+    
+    return stats
+
+
+def main():
+    """
+    Main Streamlit dashboard application.
+    Displays self-healing statistics and recent events.
+    """
+    # Page configuration
+    st.set_page_config(
+        page_title="Self-Healing SRE Dashboard",
+        page_icon="🏥",
+        layout="wide",
+        initial_sidebar_state="collapsed"
     )
     
+    # Custom CSS for dark mode styling
+    st.markdown("""
+        <style>
+        /* Main container styling */
+        .block-container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        /* Metric styling */
+        [data-testid="stMetricValue"] {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        /* Success message styling */
+        .success-box {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid #00ff00;
+            margin: 1rem 0;
+        }
+        
+        /* Error message styling */
+        .error-box {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid #ff0000;
+            margin: 1rem 0;
+        }
+        
+        /* Table styling */
+        .dataframe {
+            font-size: 0.9rem;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    # Header
+    st.title("🏥 Self-Healing SRE Dashboard")
+    st.markdown("**Real-time monitoring of automated incident remediation**")
+    
+    # Add a separator
     st.markdown("---")
     
-    # Auto-refresh toggle
-    auto_refresh = st.checkbox("Auto-refresh", value=True)
-    if auto_refresh:
-        refresh_rate = st.slider("Refresh Rate (seconds)", 1, 10, 2)
+    # Read healing events
+    events, error_message = read_healing_events()
     
-    st.markdown("---")
-    st.caption("🚀 Powered by ML & Python")
-
-# Check if log file exists
-if not os.path.exists('healed_incidents.log'):
-    st.warning("⏳ Waiting for first incident to be logged...")
-    st.info("The agent is monitoring `system.log` and will log healing actions here.")
-    if auto_refresh:
-        time.sleep(refresh_rate)
-        st.rerun()
-else:
-    try:
-        # Read the log file
-        df = pd.read_csv('healed_incidents.log', names=['Timestamp', 'Event'], on_bad_lines='skip', dtype=str)
+    # Display error if file cannot be read
+    if error_message:
+        st.warning(f"⚠️ {error_message}")
+        st.info("💡 **Instructions:**\n"
+                "1. Start the log generator: `python app.py`\n"
+                "2. Start the healing agent: `python agent.py`\n"
+                "3. Wait for anomalies to be detected and healed")
         
-        # Parse timestamps
-        df['Timestamp'] = pd.to_datetime(df['Timestamp'].str.strip('[]'), errors='coerce')
-        df = df.dropna(subset=['Timestamp'])
-        
-        # Ensure Event column is string type
-        df['Event'] = df['Event'].astype(str)
-        
-        # Apply filters
-        filtered_df = df.copy()
-        if filter_option == "ML Anomalies Only":
-            filtered_df = df[df['Event'].str.contains('frequency|scaling', case=False, na=False)]
-        elif filter_option == "Database Errors Only":
-            filtered_df = df[df['Event'].str.contains('Database', case=False, na=False)]
-        elif filter_option == "CPU Issues Only":
-            filtered_df = df[df['Event'].str.contains('CPU|Temporary files', case=False, na=False)]
-        
-        # Status update in sidebar
-        current_count = len(df)
-        with st.sidebar:
-            if current_count > st.session_state.last_incident_count:
-                st.success("🟡 **HEALING** - New Incident Resolved")
-                st.session_state.last_incident_count = current_count
-            else:
-                st.success("🟢 **ACTIVE** - Monitoring in Progress")
-        
-        # Top Metrics Row
-        col1, col2, col3, col4 = st.columns(4)
-        
-        # Calculate metrics
-        db_fixes = df[df['Event'].str.contains('Database', case=False, na=False)].shape[0]
-        cpu_fixes = df[df['Event'].str.contains('CPU|Temporary files', case=False, na=False)].shape[0]
-        ml_fixes = df[df['Event'].str.contains('frequency|scaling', case=False, na=False)].shape[0]
-        total_incidents = len(df)
-        
-        # System Reliability Score (100% if all incidents were resolved)
-        reliability_score = 100 if total_incidents > 0 else 100
-        
+        # Show empty state
+        col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric(
-                label="🗄️ Database Heals",
-                value=db_fixes,
-                delta=f"{db_fixes} resolved"
-            )
-        
+            st.metric("Total Incidents Healed", 0)
         with col2:
-            st.metric(
-                label="💻 CPU Optimizations",
-                value=cpu_fixes,
-                delta=f"{cpu_fixes} resolved"
-            )
-        
+            st.metric("Database Errors", 0)
         with col3:
-            st.metric(
-                label="🧠 ML Detections",
-                value=ml_fixes,
-                delta=f"{ml_fixes} auto-scaled"
-            )
+            st.metric("CPU Errors", 0)
         
-        with col4:
-            # Health score with color coding
-            score_color = "🟢" if reliability_score >= 95 else "🟡" if reliability_score >= 80 else "🔴"
-            st.metric(
-                label=f"{score_color} System Health",
-                value=f"{reliability_score}%",
-                delta="Optimal" if reliability_score == 100 else "Degraded"
-            )
+        # Auto-refresh message
+        st.caption(f"⟳ Auto-refreshing every {REFRESH_INTERVAL} seconds...")
+        time.sleep(REFRESH_INTERVAL)
+        st.rerun()
+        return
+    
+    # Calculate statistics
+    stats = calculate_statistics(events)
+    
+    # Display metrics in columns
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.metric(
+            label="📊 Total Incidents Healed",
+            value=stats['total'],
+            delta=f"Active" if stats['total'] > 0 else "Waiting"
+        )
+    
+    with col2:
+        st.metric(
+            label="🗄️ Database Errors",
+            value=stats['db_errors'],
+            delta=f"{stats['db_errors']/stats['total']*100:.0f}%" if stats['total'] > 0 else "0%"
+        )
+    
+    with col3:
+        st.metric(
+            label="⚡ CPU Errors",
+            value=stats['cpu_errors'],
+            delta=f"{stats['cpu_errors']/stats['total']*100:.0f}%" if stats['total'] > 0 else "0%"
+        )
+    
+    with col4:
+        st.metric(
+            label="🔧 Other Errors",
+            value=stats['other_errors'],
+            delta=f"{stats['other_errors']/stats['total']*100:.0f}%" if stats['total'] > 0 else "0%"
+        )
+    
+    # Show last healing time
+    if stats['last_healing']:
+        st.success(f"✅ Last healing: **{stats['last_healing']}**")
+    
+    # Add separator
+    st.markdown("---")
+    
+    # Display recent healing events
+    st.subheader("📋 Recent Healing Events")
+    
+    if events:
+        # Prepare data for table display
+        table_data = []
+        for event in events[:20]:  # Show last 20 events
+            table_data.append({
+                'Timestamp': event['timestamp_str'],
+                'Type': event['anomaly_type'].replace('_', ' ').title(),
+                'Action': event['message']
+            })
         
-        st.markdown("---")
+        # Display as dataframe
+        st.dataframe(
+            table_data,
+            use_container_width=True,
+            hide_index=True
+        )
         
-        # Incident Frequency Chart
-        col_chart, col_stats = st.columns([2, 1])
-        
-        with col_chart:
-            st.markdown("### 📈 Incident Frequency Over Time")
-            
-            if len(filtered_df) > 0:
-                # Create time series data
-                df_chart = filtered_df.copy()
-                df_chart['Hour'] = df_chart['Timestamp'].dt.floor('Min')
-                incident_counts = df_chart.groupby('Hour').size().reset_index(name='Incidents')
-                incident_counts = incident_counts.set_index('Hour')
-                
-                st.line_chart(incident_counts, use_container_width=True, color="#00ff88")
-            else:
-                st.info("No incidents in selected filter range")
-        
-        with col_stats:
-            st.markdown("### 🎯 Quick Stats")
-            st.markdown(f"**Total Incidents:** {total_incidents}")
-            st.markdown(f"**Resolution Rate:** 100%")
-            st.markdown(f"**Uptime:** 99.9%")
-            st.markdown(f"**Last Event:** {df['Timestamp'].max().strftime('%H:%M:%S') if len(df) > 0 else 'N/A'}")
-            
-            # Incident breakdown
-            st.markdown("---")
-            st.markdown("**Incident Breakdown:**")
-            if total_incidents > 0:
-                db_pct = (db_fixes / total_incidents * 100) if total_incidents > 0 else 0
-                cpu_pct = (cpu_fixes / total_incidents * 100) if total_incidents > 0 else 0
-                ml_pct = (ml_fixes / total_incidents * 100) if total_incidents > 0 else 0
-                
-                st.progress(db_pct / 100, text=f"Database: {db_pct:.1f}%")
-                st.progress(cpu_pct / 100, text=f"CPU: {cpu_pct:.1f}%")
-                st.progress(ml_pct / 100, text=f"ML: {ml_pct:.1f}%")
-        
-        st.markdown("---")
-        
-        # Recent Healing Events Table
-        st.markdown("### 📋 Recent Healing Events")
-        
-        if len(filtered_df) > 0:
-            # Format the display
-            display_df = filtered_df[['Timestamp', 'Event']].tail(15).copy()
-            display_df['Timestamp'] = display_df['Timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S')
-            
-            # Add status column
-            display_df['Status'] = '✅ Resolved'
-            
-            st.dataframe(
-                display_df[['Timestamp', 'Event', 'Status']],
-                use_container_width=True,
-                hide_index=True,
-                height=400
-            )
-        else:
-            st.info("No events matching the current filter")
-        
-        # Footer
-        st.markdown("---")
-        col_footer1, col_footer2, col_footer3 = st.columns(3)
-        with col_footer1:
-            st.caption(f"🕐 Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        with col_footer2:
-            st.caption(f"📊 Showing: {filter_option}")
-        with col_footer3:
-            if auto_refresh:
-                st.caption(f"🔄 Auto-refresh: {refresh_rate}s")
-            else:
-                st.caption("🔄 Auto-refresh: OFF")
-        
-    except pd.errors.EmptyDataError:
-        st.warning("⏳ Log file is empty. Waiting for incidents...")
-    except Exception as e:
-        st.error(f"⚠️ Error reading log file: {str(e)}")
-        st.info("Make sure `healed_incidents.log` exists and is properly formatted.")
-
-# Auto-refresh mechanism
-if auto_refresh:
-    time.sleep(refresh_rate)
+        # Show count if more than 20 events
+        if len(events) > 20:
+            st.caption(f"Showing 20 most recent events (total: {len(events)})")
+    else:
+        st.info("No healing events yet. The dashboard will update automatically when incidents are detected and healed.")
+    
+    # Footer with refresh info
+    st.markdown("---")
+    col1, col2 = st.columns([3, 1])
+    
+    with col1:
+        st.caption(f"📂 Reading from: `{HEALING_LOG}`")
+    
+    with col2:
+        st.caption(f"⟳ Auto-refresh: {REFRESH_INTERVAL}s")
+    
+    # Auto-refresh by sleeping and rerunning
+    time.sleep(REFRESH_INTERVAL)
     st.rerun()
+
+
+if __name__ == "__main__":
+    main()

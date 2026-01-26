@@ -1,0 +1,845 @@
+2026-01-26 19:20:53 | INFO | Background job completed | cpu=36% mem=40%
+2026-01-26 19:20:55 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 19:20:56 | INFO | Request processed successfully | cpu=52% mem=55%
+2026-01-26 19:20:58 | INFO | Request processed successfully | cpu=42% mem=32%
+2026-01-26 19:20:59 | INFO | Health check passed | cpu=41% mem=39% disk=30%
+2026-01-26 19:21:00 | INFO | Request processed successfully | cpu=38% mem=59%
+2026-01-26 19:21:01 | INFO | Request processed successfully | cpu=23% mem=41%
+2026-01-26 19:21:04 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 19:21:06 | INFO | API endpoint responded | latency=81ms cpu=19%
+2026-01-26 19:21:09 | INFO | API endpoint responded | latency=96ms cpu=10%
+2026-01-26 19:21:11 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 20:47:39 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 20:47:40 | INFO | API endpoint responded | latency=50ms cpu=41%
+2026-01-26 20:47:42 | INFO | Service healthy | cpu=60% mem=49% disk=40%
+2026-01-26 20:47:43 | INFO | Health check passed | cpu=25% mem=57% disk=53%
+2026-01-26 20:47:44 | INFO | Service healthy | cpu=21% mem=69% disk=35%
+2026-01-26 20:47:46 | INFO | Request processed successfully | cpu=42% mem=46%
+2026-01-26 20:47:48 | INFO | Health check passed | cpu=13% mem=48% disk=41%
+2026-01-26 20:47:49 | INFO | Background job completed | cpu=29% mem=58%
+2026-01-26 20:47:50 | INFO | API endpoint responded | latency=70ms cpu=46%
+2026-01-26 20:47:51 | INFO | API endpoint responded | latency=84ms cpu=34%
+2026-01-26 20:47:53 | INFO | API endpoint responded | latency=173ms cpu=29%
+2026-01-26 20:47:54 | INFO | API endpoint responded | latency=79ms cpu=36%
+2026-01-26 20:47:56 | INFO | Background job completed | cpu=42% mem=52%
+2026-01-26 20:47:58 | INFO | API endpoint responded | latency=85ms cpu=40%
+2026-01-26 20:48:00 | INFO | Request processed successfully | cpu=50% mem=44%
+2026-01-26 20:48:01 | INFO | Background job completed | cpu=28% mem=63%
+2026-01-26 20:48:03 | INFO | Health check passed | cpu=23% mem=56% disk=26%
+2026-01-26 20:48:05 | INFO | Request processed successfully | cpu=55% mem=70%
+2026-01-26 20:48:06 | INFO | Health check passed | cpu=49% mem=68% disk=27%
+2026-01-26 20:48:08 | INFO | Health check passed | cpu=57% mem=45% disk=27%
+2026-01-26 20:48:09 | INFO | Health check passed | cpu=36% mem=64% disk=46%
+2026-01-26 20:48:11 | INFO | Request processed successfully | cpu=46% mem=49%
+2026-01-26 20:48:12 | INFO | Service healthy | cpu=10% mem=67% disk=48%
+2026-01-26 20:48:14 | INFO | Background job completed | cpu=34% mem=64%
+2026-01-26 20:48:15 | INFO | Background job completed | cpu=39% mem=41%
+2026-01-26 20:48:16 | INFO | Health check passed | cpu=35% mem=43% disk=51%
+2026-01-26 20:48:17 | INFO | Background job completed | cpu=25% mem=40%
+2026-01-26 20:48:19 | INFO | Health check passed | cpu=57% mem=62% disk=29%
+2026-01-26 20:48:20 | INFO | API endpoint responded | latency=187ms cpu=18%
+2026-01-26 20:48:22 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 20:48:24 | ERROR | CPU spike detected | cpu=95% mem=74% cause=heavy_processing
+2026-01-26 20:48:25 | INFO | API endpoint responded | latency=169ms cpu=10%
+2026-01-26 20:48:26 | INFO | API endpoint responded | latency=65ms cpu=35%
+2026-01-26 20:48:28 | INFO | Service healthy | cpu=55% mem=65% disk=44%
+2026-01-26 20:48:30 | INFO | Service healthy | cpu=42% mem=52% disk=56%
+2026-01-26 20:48:31 | INFO | Health check passed | cpu=19% mem=36% disk=25%
+2026-01-26 20:48:32 | INFO | Service healthy | cpu=50% mem=34% disk=42%
+2026-01-26 20:48:34 | INFO | Request processed successfully | cpu=44% mem=48%
+2026-01-26 20:48:35 | INFO | Request processed successfully | cpu=18% mem=60%
+2026-01-26 20:48:37 | INFO | API endpoint responded | latency=83ms cpu=31%
+2026-01-26 20:48:38 | INFO | Health check passed | cpu=53% mem=53% disk=55%
+2026-01-26 20:48:40 | INFO | Health check passed | cpu=24% mem=49% disk=31%
+2026-01-26 20:48:41 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 20:48:43 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 20:48:44 | INFO | Background job completed | cpu=33% mem=63%
+2026-01-26 20:48:46 | INFO | API endpoint responded | latency=188ms cpu=15%
+2026-01-26 20:48:47 | INFO | Request processed successfully | cpu=16% mem=46%
+2026-01-26 20:48:49 | INFO | Background job completed | cpu=44% mem=33%
+2026-01-26 20:48:50 | ERROR | System performance degraded | cpu=98% load_avg=7.31
+2026-01-26 20:48:52 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 20:48:53 | INFO | Request processed successfully | cpu=59% mem=65%
+2026-01-26 20:48:54 | INFO | Health check passed | cpu=60% mem=69% disk=39%
+2026-01-26 20:48:56 | INFO | Service healthy | cpu=31% mem=32% disk=33%
+2026-01-26 20:48:57 | INFO | Background job completed | cpu=18% mem=64%
+2026-01-26 20:48:59 | INFO | Request processed successfully | cpu=29% mem=43%
+2026-01-26 20:49:00 | INFO | Health check passed | cpu=39% mem=33% disk=57%
+2026-01-26 20:49:01 | INFO | API endpoint responded | latency=181ms cpu=24%
+2026-01-26 20:49:03 | INFO | Request processed successfully | cpu=53% mem=60%
+2026-01-26 20:49:05 | INFO | Background job completed | cpu=39% mem=69%
+2026-01-26 20:49:06 | INFO | Service healthy | cpu=21% mem=51% disk=31%
+2026-01-26 20:49:08 | INFO | Background job completed | cpu=12% mem=50%
+2026-01-26 20:49:09 | INFO | Service healthy | cpu=21% mem=54% disk=51%
+2026-01-26 20:49:10 | INFO | Service healthy | cpu=33% mem=54% disk=50%
+2026-01-26 20:49:12 | ERROR | High CPU usage warning | cpu=91% process=api_server mem=81%
+2026-01-26 20:49:14 | INFO | API endpoint responded | latency=61ms cpu=18%
+2026-01-26 20:49:15 | INFO | Service healthy | cpu=31% mem=41% disk=48%
+2026-01-26 20:49:17 | INFO | Health check passed | cpu=31% mem=34% disk=43%
+2026-01-26 20:49:18 | INFO | API endpoint responded | latency=92ms cpu=12%
+2026-01-26 20:49:20 | INFO | Health check passed | cpu=27% mem=68% disk=38%
+2026-01-26 20:49:22 | INFO | Request processed successfully | cpu=60% mem=52%
+2026-01-26 20:49:23 | INFO | Service healthy | cpu=13% mem=32% disk=23%
+2026-01-26 20:49:25 | INFO | API endpoint responded | latency=65ms cpu=33%
+2026-01-26 20:49:26 | INFO | Health check passed | cpu=58% mem=46% disk=46%
+2026-01-26 20:49:28 | INFO | Service healthy | cpu=22% mem=47% disk=41%
+2026-01-26 20:49:30 | INFO | Health check passed | cpu=52% mem=66% disk=38%
+2026-01-26 20:49:31 | INFO | Health check passed | cpu=37% mem=59% disk=43%
+2026-01-26 20:49:32 | INFO | Service healthy | cpu=13% mem=54% disk=32%
+2026-01-26 20:49:34 | INFO | Health check passed | cpu=14% mem=43% disk=55%
+2026-01-26 20:49:36 | INFO | Request processed successfully | cpu=58% mem=66%
+2026-01-26 20:49:37 | INFO | Request processed successfully | cpu=39% mem=47%
+2026-01-26 20:49:38 | INFO | API endpoint responded | latency=67ms cpu=60%
+2026-01-26 20:49:40 | INFO | Service healthy | cpu=24% mem=62% disk=38%
+2026-01-26 20:49:41 | INFO | Health check passed | cpu=16% mem=41% disk=24%
+2026-01-26 20:49:43 | INFO | API endpoint responded | latency=162ms cpu=42%
+2026-01-26 20:49:45 | INFO | Health check passed | cpu=20% mem=31% disk=54%
+2026-01-26 20:49:47 | INFO | Background job completed | cpu=12% mem=69%
+2026-01-26 20:49:48 | INFO | Service healthy | cpu=41% mem=48% disk=42%
+2026-01-26 20:49:50 | ERROR | CPU threshold exceeded | cpu=95% duration=30s mem=67%
+2026-01-26 20:49:51 | INFO | Health check passed | cpu=56% mem=30% disk=48%
+2026-01-26 20:49:53 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 20:49:54 | INFO | Request processed successfully | cpu=30% mem=32%
+2026-01-26 20:49:56 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 20:49:58 | INFO | Request processed successfully | cpu=30% mem=65%
+2026-01-26 20:50:00 | INFO | Service healthy | cpu=50% mem=64% disk=40%
+2026-01-26 20:50:02 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 20:50:03 | INFO | Background job completed | cpu=23% mem=61%
+2026-01-26 20:50:05 | INFO | API endpoint responded | latency=126ms cpu=14%
+2026-01-26 20:50:07 | INFO | Background job completed | cpu=47% mem=41%
+2026-01-26 20:50:09 | INFO | API endpoint responded | latency=138ms cpu=51%
+2026-01-26 20:50:11 | INFO | Background job completed | cpu=26% mem=35%
+2026-01-26 20:50:13 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 20:50:14 | INFO | Background job completed | cpu=38% mem=62%
+2026-01-26 20:50:16 | INFO | API endpoint responded | latency=176ms cpu=18%
+2026-01-26 20:50:18 | INFO | API endpoint responded | latency=56ms cpu=54%
+2026-01-26 20:50:20 | INFO | Health check passed | cpu=20% mem=36% disk=41%
+2026-01-26 20:50:22 | INFO | Request processed successfully | cpu=27% mem=56%
+2026-01-26 20:50:23 | INFO | Service healthy | cpu=48% mem=50% disk=48%
+2026-01-26 20:50:24 | INFO | Background job completed | cpu=52% mem=68%
+2026-01-26 20:50:26 | INFO | Health check passed | cpu=36% mem=41% disk=28%
+2026-01-26 20:50:28 | INFO | Request processed successfully | cpu=54% mem=51%
+2026-01-26 20:50:30 | INFO | Health check passed | cpu=52% mem=46% disk=58%
+2026-01-26 20:50:31 | INFO | Background job completed | cpu=27% mem=34%
+2026-01-26 20:50:32 | ERROR | CPU spike detected | cpu=89% mem=76% cause=heavy_processing
+2026-01-26 20:50:34 | INFO | Request processed successfully | cpu=11% mem=49%
+2026-01-26 20:50:35 | INFO | Request processed successfully | cpu=13% mem=43%
+2026-01-26 20:50:37 | INFO | Request processed successfully | cpu=55% mem=49%
+2026-01-26 20:50:39 | INFO | API endpoint responded | latency=79ms cpu=13%
+2026-01-26 20:50:40 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 20:50:42 | INFO | Request processed successfully | cpu=41% mem=57%
+2026-01-26 20:50:43 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 20:50:45 | INFO | Health check passed | cpu=40% mem=46% disk=36%
+2026-01-26 20:50:47 | INFO | Background job completed | cpu=53% mem=35%
+2026-01-26 20:50:49 | INFO | Service healthy | cpu=39% mem=57% disk=39%
+2026-01-26 20:50:51 | ERROR | System performance degraded | cpu=92% load_avg=6.34
+2026-01-26 20:50:52 | INFO | Background job completed | cpu=33% mem=42%
+2026-01-26 20:50:54 | INFO | API endpoint responded | latency=198ms cpu=14%
+2026-01-26 20:50:56 | INFO | Service healthy | cpu=43% mem=65% disk=58%
+2026-01-26 20:50:58 | INFO | Background job completed | cpu=37% mem=39%
+2026-01-26 20:50:59 | INFO | Health check passed | cpu=23% mem=41% disk=34%
+2026-01-26 20:51:01 | INFO | Service healthy | cpu=23% mem=68% disk=35%
+2026-01-26 20:51:02 | INFO | Health check passed | cpu=19% mem=54% disk=31%
+2026-01-26 20:51:04 | INFO | Health check passed | cpu=32% mem=55% disk=53%
+2026-01-26 20:51:05 | INFO | Service healthy | cpu=45% mem=49% disk=36%
+2026-01-26 20:51:07 | INFO | Health check passed | cpu=53% mem=49% disk=44%
+2026-01-26 20:51:09 | ERROR | System performance degraded | cpu=92% load_avg=6.05
+2026-01-26 20:51:10 | INFO | Service healthy | cpu=10% mem=30% disk=47%
+2026-01-26 20:51:11 | INFO | Background job completed | cpu=60% mem=30%
+2026-01-26 20:51:13 | INFO | Background job completed | cpu=36% mem=49%
+2026-01-26 20:51:14 | INFO | Request processed successfully | cpu=35% mem=36%
+2026-01-26 20:51:16 | INFO | Request processed successfully | cpu=46% mem=53%
+2026-01-26 20:51:17 | INFO | API endpoint responded | latency=186ms cpu=19%
+2026-01-26 20:51:19 | INFO | Service healthy | cpu=43% mem=49% disk=27%
+2026-01-26 20:51:20 | INFO | Request processed successfully | cpu=39% mem=52%
+2026-01-26 20:51:22 | INFO | Service healthy | cpu=23% mem=31% disk=24%
+2026-01-26 20:51:23 | INFO | API endpoint responded | latency=72ms cpu=38%
+2026-01-26 20:51:24 | INFO | Request processed successfully | cpu=36% mem=55%
+2026-01-26 20:51:26 | INFO | Health check passed | cpu=42% mem=43% disk=50%
+2026-01-26 20:51:27 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 20:51:28 | INFO | Background job completed | cpu=16% mem=64%
+2026-01-26 20:51:30 | INFO | Service healthy | cpu=58% mem=68% disk=34%
+2026-01-26 20:51:31 | INFO | Service healthy | cpu=48% mem=66% disk=49%
+2026-01-26 20:51:32 | INFO | Request processed successfully | cpu=11% mem=37%
+2026-01-26 20:51:34 | INFO | Service healthy | cpu=52% mem=56% disk=52%
+2026-01-26 20:51:36 | INFO | API endpoint responded | latency=195ms cpu=58%
+2026-01-26 20:51:37 | INFO | Background job completed | cpu=41% mem=40%
+2026-01-26 20:51:39 | INFO | Service healthy | cpu=46% mem=67% disk=45%
+2026-01-26 20:51:40 | INFO | API endpoint responded | latency=85ms cpu=22%
+2026-01-26 20:51:42 | INFO | Background job completed | cpu=40% mem=69%
+2026-01-26 20:51:44 | INFO | Request processed successfully | cpu=17% mem=67%
+2026-01-26 20:51:45 | INFO | Background job completed | cpu=51% mem=38%
+2026-01-26 20:51:47 | INFO | Background job completed | cpu=56% mem=33%
+2026-01-26 20:51:48 | INFO | Request processed successfully | cpu=12% mem=32%
+2026-01-26 20:51:50 | INFO | API endpoint responded | latency=90ms cpu=13%
+2026-01-26 20:51:51 | ERROR | High CPU usage warning | cpu=96% process=api_server mem=73%
+2026-01-26 20:51:53 | INFO | API endpoint responded | latency=81ms cpu=46%
+2026-01-26 20:51:55 | INFO | Request processed successfully | cpu=45% mem=38%
+2026-01-26 20:51:57 | ERROR | CPU spike detected | cpu=90% mem=65% cause=heavy_processing
+2026-01-26 20:51:59 | INFO | API endpoint responded | latency=91ms cpu=27%
+2026-01-26 20:52:01 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 20:52:02 | ERROR | System performance degraded | cpu=85% load_avg=7.61
+2026-01-26 20:52:04 | INFO | Request processed successfully | cpu=18% mem=60%
+2026-01-26 20:52:05 | INFO | Service healthy | cpu=55% mem=70% disk=24%
+2026-01-26 20:52:07 | INFO | Service healthy | cpu=20% mem=67% disk=35%
+2026-01-26 20:52:08 | INFO | Service healthy | cpu=53% mem=70% disk=57%
+2026-01-26 20:52:10 | INFO | Health check passed | cpu=41% mem=49% disk=24%
+2026-01-26 20:52:11 | INFO | Health check passed | cpu=23% mem=41% disk=59%
+2026-01-26 20:52:13 | INFO | API endpoint responded | latency=97ms cpu=57%
+2026-01-26 20:52:14 | INFO | Service healthy | cpu=22% mem=70% disk=21%
+2026-01-26 20:52:16 | INFO | Health check passed | cpu=47% mem=34% disk=36%
+2026-01-26 20:52:17 | INFO | Service healthy | cpu=15% mem=54% disk=53%
+2026-01-26 20:52:18 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 20:52:20 | INFO | Service healthy | cpu=14% mem=37% disk=57%
+2026-01-26 20:52:22 | INFO | Service healthy | cpu=42% mem=41% disk=42%
+2026-01-26 20:52:24 | INFO | Request processed successfully | cpu=13% mem=63%
+2026-01-26 20:52:25 | INFO | Request processed successfully | cpu=16% mem=41%
+2026-01-26 20:52:27 | INFO | Background job completed | cpu=24% mem=41%
+2026-01-26 20:52:28 | INFO | Request processed successfully | cpu=58% mem=50%
+2026-01-26 20:52:29 | INFO | API endpoint responded | latency=76ms cpu=40%
+2026-01-26 20:52:30 | INFO | Health check passed | cpu=52% mem=31% disk=58%
+2026-01-26 20:52:32 | INFO | API endpoint responded | latency=79ms cpu=29%
+2026-01-26 20:52:33 | INFO | API endpoint responded | latency=65ms cpu=44%
+2026-01-26 20:52:35 | INFO | Request processed successfully | cpu=17% mem=58%
+2026-01-26 20:52:36 | INFO | API endpoint responded | latency=98ms cpu=47%
+2026-01-26 20:52:38 | INFO | Request processed successfully | cpu=48% mem=40%
+2026-01-26 20:52:39 | INFO | Background job completed | cpu=14% mem=55%
+2026-01-26 20:52:41 | INFO | Health check passed | cpu=46% mem=39% disk=59%
+2026-01-26 20:52:43 | INFO | Request processed successfully | cpu=59% mem=54%
+2026-01-26 20:52:45 | INFO | Service healthy | cpu=58% mem=56% disk=55%
+2026-01-26 20:52:46 | INFO | Background job completed | cpu=27% mem=65%
+2026-01-26 20:52:47 | INFO | Service healthy | cpu=20% mem=55% disk=60%
+2026-01-26 20:52:49 | INFO | Request processed successfully | cpu=33% mem=48%
+2026-01-26 20:52:51 | INFO | Service healthy | cpu=18% mem=41% disk=26%
+2026-01-26 20:52:53 | INFO | Health check passed | cpu=57% mem=37% disk=25%
+2026-01-26 20:52:54 | INFO | Background job completed | cpu=59% mem=37%
+2026-01-26 20:52:55 | ERROR | CPU spike detected | cpu=85% mem=88% cause=heavy_processing
+2026-01-26 20:52:57 | INFO | Health check passed | cpu=56% mem=39% disk=39%
+2026-01-26 20:52:58 | INFO | Service healthy | cpu=32% mem=63% disk=27%
+2026-01-26 20:53:00 | INFO | Background job completed | cpu=56% mem=60%
+2026-01-26 20:53:02 | INFO | API endpoint responded | latency=54ms cpu=11%
+2026-01-26 20:53:03 | INFO | API endpoint responded | latency=112ms cpu=38%
+2026-01-26 20:53:05 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 20:53:06 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 20:53:08 | INFO | API endpoint responded | latency=128ms cpu=60%
+2026-01-26 20:53:09 | INFO | Health check passed | cpu=49% mem=30% disk=21%
+2026-01-26 20:53:11 | INFO | API endpoint responded | latency=109ms cpu=52%
+2026-01-26 20:53:13 | INFO | Service healthy | cpu=17% mem=67% disk=47%
+2026-01-26 20:53:14 | INFO | Service healthy | cpu=39% mem=47% disk=26%
+2026-01-26 20:53:15 | INFO | Background job completed | cpu=39% mem=33%
+2026-01-26 20:53:17 | INFO | Service healthy | cpu=27% mem=37% disk=23%
+2026-01-26 20:53:18 | INFO | API endpoint responded | latency=109ms cpu=11%
+2026-01-26 20:53:19 | INFO | API endpoint responded | latency=182ms cpu=54%
+2026-01-26 20:53:21 | INFO | API endpoint responded | latency=139ms cpu=20%
+2026-01-26 20:53:22 | INFO | Background job completed | cpu=10% mem=36%
+2026-01-26 20:53:24 | INFO | Background job completed | cpu=23% mem=41%
+2026-01-26 20:53:25 | INFO | Service healthy | cpu=54% mem=55% disk=37%
+2026-01-26 20:53:27 | INFO | Health check passed | cpu=41% mem=43% disk=44%
+2026-01-26 20:53:28 | INFO | Background job completed | cpu=13% mem=30%
+2026-01-26 20:53:29 | INFO | Service healthy | cpu=58% mem=57% disk=57%
+2026-01-26 20:53:31 | INFO | Background job completed | cpu=52% mem=70%
+2026-01-26 20:53:33 | INFO | Background job completed | cpu=20% mem=37%
+2026-01-26 20:53:34 | INFO | Service healthy | cpu=56% mem=32% disk=50%
+2026-01-26 20:53:36 | INFO | API endpoint responded | latency=156ms cpu=33%
+2026-01-26 20:53:38 | INFO | Background job completed | cpu=19% mem=68%
+2026-01-26 20:53:39 | INFO | Request processed successfully | cpu=25% mem=46%
+2026-01-26 20:53:40 | ERROR | System performance degraded | cpu=99% load_avg=5.02
+2026-01-26 20:53:42 | INFO | Service healthy | cpu=52% mem=59% disk=30%
+2026-01-26 20:53:44 | INFO | API endpoint responded | latency=61ms cpu=53%
+2026-01-26 20:53:45 | INFO | Health check passed | cpu=59% mem=68% disk=27%
+2026-01-26 20:53:47 | INFO | Background job completed | cpu=13% mem=63%
+2026-01-26 20:53:48 | INFO | Background job completed | cpu=56% mem=33%
+2026-01-26 20:53:49 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 20:53:50 | INFO | API endpoint responded | latency=170ms cpu=32%
+2026-01-26 20:53:51 | INFO | Request processed successfully | cpu=48% mem=53%
+2026-01-26 20:53:53 | INFO | Request processed successfully | cpu=25% mem=58%
+2026-01-26 20:53:55 | INFO | API endpoint responded | latency=92ms cpu=35%
+2026-01-26 20:53:57 | INFO | Request processed successfully | cpu=47% mem=63%
+2026-01-26 20:53:59 | INFO | Health check passed | cpu=60% mem=62% disk=52%
+2026-01-26 20:54:00 | INFO | API endpoint responded | latency=134ms cpu=41%
+2026-01-26 20:54:02 | INFO | API endpoint responded | latency=119ms cpu=19%
+2026-01-26 20:54:04 | INFO | API endpoint responded | latency=161ms cpu=33%
+2026-01-26 20:54:05 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 20:54:07 | INFO | API endpoint responded | latency=130ms cpu=41%
+2026-01-26 20:54:08 | INFO | API endpoint responded | latency=106ms cpu=48%
+2026-01-26 20:54:09 | INFO | Service healthy | cpu=24% mem=53% disk=36%
+2026-01-26 20:54:11 | INFO | Background job completed | cpu=20% mem=52%
+2026-01-26 20:54:12 | INFO | Service healthy | cpu=26% mem=33% disk=36%
+2026-01-26 20:54:14 | INFO | Health check passed | cpu=45% mem=45% disk=25%
+2026-01-26 20:54:15 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 20:54:17 | INFO | Service healthy | cpu=59% mem=59% disk=26%
+2026-01-26 20:54:19 | INFO | Background job completed | cpu=17% mem=36%
+2026-01-26 20:54:20 | INFO | Health check passed | cpu=58% mem=30% disk=52%
+2026-01-26 20:54:22 | INFO | Background job completed | cpu=48% mem=48%
+2026-01-26 20:54:23 | INFO | Background job completed | cpu=47% mem=43%
+2026-01-26 20:54:25 | INFO | Background job completed | cpu=44% mem=60%
+2026-01-26 20:54:26 | INFO | Background job completed | cpu=43% mem=52%
+2026-01-26 20:54:28 | INFO | Service healthy | cpu=37% mem=37% disk=38%
+2026-01-26 20:54:29 | INFO | Service healthy | cpu=45% mem=70% disk=53%
+2026-01-26 20:54:31 | INFO | API endpoint responded | latency=113ms cpu=34%
+2026-01-26 20:54:33 | INFO | Health check passed | cpu=54% mem=57% disk=21%
+2026-01-26 20:54:34 | INFO | Service healthy | cpu=10% mem=33% disk=21%
+2026-01-26 20:54:36 | INFO | Request processed successfully | cpu=49% mem=69%
+2026-01-26 20:54:38 | INFO | Request processed successfully | cpu=27% mem=41%
+2026-01-26 20:54:39 | INFO | Service healthy | cpu=15% mem=39% disk=20%
+2026-01-26 20:54:40 | INFO | Background job completed | cpu=41% mem=36%
+2026-01-26 20:54:42 | INFO | Service healthy | cpu=50% mem=51% disk=42%
+2026-01-26 20:54:44 | INFO | Background job completed | cpu=57% mem=70%
+2026-01-26 20:54:46 | INFO | Background job completed | cpu=25% mem=68%
+2026-01-26 20:54:47 | ERROR | High CPU usage warning | cpu=90% process=api_server mem=65%
+2026-01-26 20:54:49 | INFO | Health check passed | cpu=46% mem=43% disk=59%
+2026-01-26 20:54:50 | INFO | Request processed successfully | cpu=57% mem=36%
+2026-01-26 20:54:52 | INFO | Health check passed | cpu=39% mem=37% disk=28%
+2026-01-26 20:54:54 | INFO | Background job completed | cpu=10% mem=63%
+2026-01-26 20:54:55 | INFO | Health check passed | cpu=31% mem=39% disk=59%
+2026-01-26 20:54:57 | INFO | Service healthy | cpu=44% mem=39% disk=38%
+2026-01-26 20:54:58 | INFO | API endpoint responded | latency=153ms cpu=42%
+2026-01-26 20:54:59 | INFO | Request processed successfully | cpu=16% mem=31%
+2026-01-26 20:55:01 | INFO | Request processed successfully | cpu=47% mem=46%
+2026-01-26 20:55:02 | INFO | Service healthy | cpu=59% mem=63% disk=36%
+2026-01-26 20:55:04 | INFO | Background job completed | cpu=31% mem=70%
+2026-01-26 20:55:05 | INFO | Health check passed | cpu=16% mem=66% disk=36%
+2026-01-26 20:55:07 | INFO | Health check passed | cpu=59% mem=32% disk=42%
+2026-01-26 20:55:09 | INFO | Background job completed | cpu=23% mem=62%
+2026-01-26 20:55:10 | ERROR | High CPU usage warning | cpu=88% process=api_server mem=77%
+2026-01-26 20:55:12 | INFO | Request processed successfully | cpu=21% mem=37%
+2026-01-26 20:55:13 | INFO | Request processed successfully | cpu=52% mem=45%
+2026-01-26 20:55:15 | INFO | Health check passed | cpu=46% mem=59% disk=27%
+2026-01-26 20:55:17 | INFO | Health check passed | cpu=14% mem=44% disk=56%
+2026-01-26 20:55:18 | ERROR | High CPU usage warning | cpu=90% process=api_server mem=78%
+2026-01-26 20:55:20 | INFO | API endpoint responded | latency=143ms cpu=48%
+2026-01-26 20:55:21 | INFO | Service healthy | cpu=16% mem=43% disk=29%
+2026-01-26 20:55:23 | ERROR | CPU threshold exceeded | cpu=93% duration=30s mem=84%
+2026-01-26 20:55:24 | INFO | Health check passed | cpu=36% mem=36% disk=33%
+2026-01-26 20:55:26 | INFO | API endpoint responded | latency=150ms cpu=55%
+2026-01-26 20:55:27 | INFO | Service healthy | cpu=30% mem=46% disk=36%
+2026-01-26 20:55:29 | INFO | Request processed successfully | cpu=28% mem=58%
+2026-01-26 20:55:30 | INFO | Health check passed | cpu=20% mem=44% disk=34%
+2026-01-26 20:55:32 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 20:55:33 | INFO | API endpoint responded | latency=152ms cpu=29%
+2026-01-26 20:55:35 | INFO | Request processed successfully | cpu=58% mem=53%
+2026-01-26 20:55:36 | INFO | Health check passed | cpu=16% mem=56% disk=49%
+2026-01-26 20:55:38 | INFO | Health check passed | cpu=53% mem=35% disk=53%
+2026-01-26 20:55:40 | INFO | Service healthy | cpu=18% mem=48% disk=34%
+2026-01-26 20:55:42 | INFO | Background job completed | cpu=39% mem=47%
+2026-01-26 20:55:44 | INFO | Service healthy | cpu=33% mem=47% disk=44%
+2026-01-26 20:55:45 | INFO | Health check passed | cpu=54% mem=35% disk=38%
+2026-01-26 20:55:46 | INFO | Request processed successfully | cpu=14% mem=40%
+2026-01-26 20:55:48 | INFO | Health check passed | cpu=32% mem=49% disk=54%
+2026-01-26 20:55:49 | INFO | Background job completed | cpu=34% mem=47%
+2026-01-26 20:55:50 | INFO | Health check passed | cpu=57% mem=34% disk=33%
+2026-01-26 20:55:52 | INFO | Request processed successfully | cpu=15% mem=47%
+2026-01-26 20:55:53 | INFO | Health check passed | cpu=53% mem=44% disk=37%
+2026-01-26 20:55:55 | INFO | Health check passed | cpu=35% mem=32% disk=59%
+2026-01-26 20:55:57 | INFO | Health check passed | cpu=54% mem=40% disk=32%
+2026-01-26 20:55:58 | INFO | API endpoint responded | latency=127ms cpu=19%
+2026-01-26 20:55:59 | INFO | Request processed successfully | cpu=14% mem=33%
+2026-01-26 20:56:01 | INFO | Request processed successfully | cpu=22% mem=53%
+2026-01-26 20:56:03 | INFO | Health check passed | cpu=52% mem=31% disk=35%
+2026-01-26 20:56:04 | INFO | Service healthy | cpu=22% mem=64% disk=30%
+2026-01-26 20:56:05 | INFO | API endpoint responded | latency=133ms cpu=15%
+2026-01-26 20:56:06 | INFO | Background job completed | cpu=43% mem=60%
+2026-01-26 20:56:08 | INFO | Health check passed | cpu=57% mem=60% disk=28%
+2026-01-26 20:56:10 | INFO | Request processed successfully | cpu=38% mem=46%
+2026-01-26 20:56:11 | INFO | Health check passed | cpu=43% mem=67% disk=41%
+2026-01-26 20:56:13 | INFO | Health check passed | cpu=41% mem=54% disk=28%
+2026-01-26 20:56:14 | INFO | Background job completed | cpu=58% mem=48%
+2026-01-26 20:56:16 | INFO | Service healthy | cpu=26% mem=59% disk=56%
+2026-01-26 20:56:18 | INFO | Request processed successfully | cpu=40% mem=52%
+2026-01-26 20:56:19 | INFO | Service healthy | cpu=51% mem=37% disk=23%
+2026-01-26 20:56:21 | INFO | Service healthy | cpu=36% mem=42% disk=31%
+2026-01-26 20:56:23 | INFO | Health check passed | cpu=13% mem=56% disk=24%
+2026-01-26 20:56:25 | INFO | API endpoint responded | latency=83ms cpu=13%
+2026-01-26 20:56:26 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 20:56:27 | INFO | Background job completed | cpu=52% mem=65%
+2026-01-26 20:56:28 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 20:56:30 | INFO | Request processed successfully | cpu=31% mem=50%
+2026-01-26 20:56:31 | INFO | Service healthy | cpu=47% mem=48% disk=60%
+2026-01-26 20:56:33 | INFO | Health check passed | cpu=48% mem=58% disk=23%
+2026-01-26 20:56:35 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 20:56:36 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 20:56:37 | INFO | Request processed successfully | cpu=20% mem=38%
+2026-01-26 20:56:38 | INFO | Background job completed | cpu=38% mem=40%
+2026-01-26 20:56:40 | INFO | API endpoint responded | latency=131ms cpu=23%
+2026-01-26 20:56:41 | INFO | Service healthy | cpu=14% mem=60% disk=45%
+2026-01-26 20:56:42 | INFO | Service healthy | cpu=54% mem=30% disk=57%
+2026-01-26 20:56:43 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 20:56:44 | INFO | Request processed successfully | cpu=50% mem=39%
+2026-01-26 20:56:46 | INFO | Health check passed | cpu=24% mem=60% disk=58%
+2026-01-26 20:56:48 | INFO | API endpoint responded | latency=131ms cpu=44%
+2026-01-26 20:56:50 | INFO | Health check passed | cpu=39% mem=61% disk=36%
+2026-01-26 20:56:51 | ERROR | High CPU usage warning | cpu=87% process=api_server mem=89%
+2026-01-26 20:56:52 | INFO | Request processed successfully | cpu=39% mem=32%
+2026-01-26 20:56:54 | INFO | Background job completed | cpu=59% mem=49%
+2026-01-26 20:56:56 | INFO | Health check passed | cpu=57% mem=65% disk=37%
+2026-01-26 20:56:57 | INFO | Background job completed | cpu=57% mem=30%
+2026-01-26 20:56:59 | INFO | API endpoint responded | latency=165ms cpu=32%
+2026-01-26 20:57:00 | INFO | Request processed successfully | cpu=27% mem=38%
+2026-01-26 20:57:01 | INFO | Request processed successfully | cpu=30% mem=66%
+2026-01-26 20:57:03 | INFO | Service healthy | cpu=54% mem=62% disk=49%
+2026-01-26 20:57:05 | INFO | Request processed successfully | cpu=36% mem=55%
+2026-01-26 20:57:06 | INFO | Health check passed | cpu=25% mem=37% disk=20%
+2026-01-26 20:57:07 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 20:57:09 | INFO | Service healthy | cpu=49% mem=36% disk=48%
+2026-01-26 20:57:10 | INFO | Request processed successfully | cpu=45% mem=49%
+2026-01-26 20:57:12 | INFO | Health check passed | cpu=30% mem=69% disk=54%
+2026-01-26 20:57:13 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 20:57:15 | INFO | Request processed successfully | cpu=13% mem=33%
+2026-01-26 20:57:16 | INFO | Background job completed | cpu=10% mem=47%
+2026-01-26 20:57:17 | INFO | Request processed successfully | cpu=15% mem=34%
+2026-01-26 20:57:19 | INFO | Service healthy | cpu=22% mem=61% disk=42%
+2026-01-26 20:57:21 | INFO | Health check passed | cpu=31% mem=48% disk=31%
+2026-01-26 20:57:23 | INFO | Health check passed | cpu=36% mem=43% disk=40%
+2026-01-26 20:57:24 | INFO | Service healthy | cpu=16% mem=68% disk=55%
+2026-01-26 20:57:26 | INFO | Health check passed | cpu=46% mem=57% disk=34%
+2026-01-26 20:57:28 | INFO | Health check passed | cpu=52% mem=68% disk=26%
+2026-01-26 20:57:30 | INFO | Background job completed | cpu=34% mem=61%
+2026-01-26 20:57:31 | INFO | Request processed successfully | cpu=53% mem=48%
+2026-01-26 20:57:32 | INFO | Background job completed | cpu=12% mem=52%
+2026-01-26 20:57:34 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 20:57:35 | INFO | Service healthy | cpu=60% mem=48% disk=33%
+2026-01-26 20:57:37 | INFO | Health check passed | cpu=16% mem=49% disk=47%
+2026-01-26 20:57:38 | INFO | Service healthy | cpu=47% mem=63% disk=43%
+2026-01-26 20:57:39 | INFO | Health check passed | cpu=52% mem=62% disk=40%
+2026-01-26 20:57:41 | INFO | Background job completed | cpu=43% mem=59%
+2026-01-26 20:57:42 | INFO | Request processed successfully | cpu=24% mem=66%
+2026-01-26 20:57:44 | INFO | Request processed successfully | cpu=46% mem=60%
+2026-01-26 20:57:46 | INFO | Health check passed | cpu=32% mem=39% disk=21%
+2026-01-26 20:57:48 | INFO | Health check passed | cpu=38% mem=41% disk=28%
+2026-01-26 20:57:50 | INFO | Background job completed | cpu=19% mem=56%
+2026-01-26 20:57:51 | INFO | Service healthy | cpu=44% mem=43% disk=26%
+2026-01-26 20:57:53 | INFO | Background job completed | cpu=16% mem=37%
+2026-01-26 20:57:55 | INFO | Request processed successfully | cpu=25% mem=49%
+2026-01-26 20:57:56 | INFO | Health check passed | cpu=21% mem=47% disk=40%
+2026-01-26 20:57:57 | INFO | Service healthy | cpu=56% mem=51% disk=56%
+2026-01-26 20:57:58 | INFO | Background job completed | cpu=50% mem=30%
+2026-01-26 20:58:00 | INFO | Health check passed | cpu=30% mem=37% disk=29%
+2026-01-26 20:58:01 | INFO | Background job completed | cpu=36% mem=56%
+2026-01-26 20:58:03 | INFO | Request processed successfully | cpu=19% mem=39%
+2026-01-26 20:58:05 | INFO | Background job completed | cpu=28% mem=55%
+2026-01-26 20:58:06 | INFO | API endpoint responded | latency=88ms cpu=38%
+2026-01-26 20:58:07 | INFO | API endpoint responded | latency=163ms cpu=11%
+2026-01-26 20:58:09 | INFO | Request processed successfully | cpu=15% mem=55%
+2026-01-26 20:58:11 | INFO | Health check passed | cpu=21% mem=53% disk=50%
+2026-01-26 20:58:12 | INFO | Request processed successfully | cpu=19% mem=45%
+2026-01-26 20:58:13 | INFO | Health check passed | cpu=25% mem=41% disk=54%
+2026-01-26 20:58:15 | INFO | Service healthy | cpu=60% mem=53% disk=46%
+2026-01-26 20:58:16 | INFO | Service healthy | cpu=27% mem=47% disk=20%
+2026-01-26 20:58:18 | INFO | Service healthy | cpu=34% mem=68% disk=31%
+2026-01-26 20:58:19 | INFO | Background job completed | cpu=19% mem=35%
+2026-01-26 20:58:20 | ERROR | CPU overload detected | cpu=91% mem=70% threshold=80%
+2026-01-26 20:58:22 | INFO | Background job completed | cpu=59% mem=30%
+2026-01-26 20:58:23 | INFO | Health check passed | cpu=26% mem=59% disk=42%
+2026-01-26 20:58:24 | INFO | Health check passed | cpu=24% mem=31% disk=28%
+2026-01-26 20:58:26 | INFO | Background job completed | cpu=28% mem=58%
+2026-01-26 20:58:28 | INFO | Background job completed | cpu=43% mem=55%
+2026-01-26 20:58:29 | INFO | API endpoint responded | latency=173ms cpu=27%
+2026-01-26 20:58:31 | INFO | Background job completed | cpu=42% mem=41%
+2026-01-26 20:58:32 | INFO | Health check passed | cpu=11% mem=32% disk=56%
+2026-01-26 20:58:34 | INFO | API endpoint responded | latency=76ms cpu=48%
+2026-01-26 20:58:35 | INFO | Health check passed | cpu=15% mem=33% disk=21%
+2026-01-26 20:58:37 | INFO | Health check passed | cpu=41% mem=49% disk=29%
+2026-01-26 20:58:39 | INFO | API endpoint responded | latency=88ms cpu=15%
+2026-01-26 20:58:40 | INFO | Service healthy | cpu=20% mem=70% disk=37%
+2026-01-26 20:58:41 | INFO | Service healthy | cpu=20% mem=43% disk=28%
+2026-01-26 20:58:43 | INFO | Service healthy | cpu=57% mem=43% disk=41%
+2026-01-26 20:58:44 | INFO | API endpoint responded | latency=54ms cpu=14%
+2026-01-26 20:58:46 | INFO | API endpoint responded | latency=165ms cpu=30%
+2026-01-26 20:58:47 | INFO | Request processed successfully | cpu=60% mem=70%
+2026-01-26 20:58:49 | INFO | Background job completed | cpu=54% mem=69%
+2026-01-26 20:58:50 | INFO | API endpoint responded | latency=63ms cpu=42%
+2026-01-26 20:58:52 | INFO | Request processed successfully | cpu=35% mem=58%
+2026-01-26 20:58:53 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 20:58:54 | INFO | Background job completed | cpu=49% mem=35%
+2026-01-26 20:58:56 | INFO | Background job completed | cpu=31% mem=48%
+2026-01-26 20:58:57 | INFO | API endpoint responded | latency=172ms cpu=56%
+2026-01-26 20:58:59 | INFO | Background job completed | cpu=30% mem=42%
+2026-01-26 20:59:00 | INFO | API endpoint responded | latency=166ms cpu=26%
+2026-01-26 20:59:02 | INFO | Request processed successfully | cpu=19% mem=51%
+2026-01-26 20:59:03 | INFO | Service healthy | cpu=29% mem=43% disk=37%
+2026-01-26 20:59:05 | INFO | API endpoint responded | latency=154ms cpu=29%
+2026-01-26 20:59:06 | INFO | Health check passed | cpu=20% mem=36% disk=25%
+2026-01-26 20:59:08 | INFO | Service healthy | cpu=16% mem=64% disk=56%
+2026-01-26 20:59:10 | INFO | API endpoint responded | latency=156ms cpu=24%
+2026-01-26 20:59:11 | INFO | Service healthy | cpu=50% mem=57% disk=32%
+2026-01-26 20:59:13 | INFO | Background job completed | cpu=31% mem=52%
+2026-01-26 20:59:14 | INFO | Request processed successfully | cpu=43% mem=47%
+2026-01-26 20:59:16 | INFO | Health check passed | cpu=52% mem=60% disk=52%
+2026-01-26 20:59:18 | INFO | API endpoint responded | latency=151ms cpu=45%
+2026-01-26 20:59:20 | INFO | Request processed successfully | cpu=44% mem=49%
+2026-01-26 20:59:22 | INFO | Background job completed | cpu=59% mem=43%
+2026-01-26 20:59:23 | INFO | Health check passed | cpu=35% mem=52% disk=48%
+2026-01-26 20:59:25 | ERROR | High CPU usage warning | cpu=94% process=api_server mem=60%
+2026-01-26 20:59:26 | ERROR | CPU overload detected | cpu=99% mem=84% threshold=80%
+2026-01-26 20:59:27 | INFO | API endpoint responded | latency=58ms cpu=48%
+2026-01-26 20:59:29 | INFO | Service healthy | cpu=26% mem=56% disk=50%
+2026-01-26 20:59:30 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 20:59:31 | INFO | Background job completed | cpu=22% mem=59%
+2026-01-26 20:59:33 | INFO | Service healthy | cpu=41% mem=69% disk=38%
+2026-01-26 20:59:34 | INFO | API endpoint responded | latency=179ms cpu=36%
+2026-01-26 20:59:36 | INFO | Service healthy | cpu=14% mem=50% disk=43%
+2026-01-26 20:59:38 | INFO | Health check passed | cpu=48% mem=58% disk=30%
+2026-01-26 20:59:39 | INFO | Request processed successfully | cpu=27% mem=45%
+2026-01-26 20:59:41 | INFO | Background job completed | cpu=12% mem=50%
+2026-01-26 20:59:42 | INFO | API endpoint responded | latency=177ms cpu=58%
+2026-01-26 20:59:44 | INFO | Service healthy | cpu=17% mem=59% disk=51%
+2026-01-26 20:59:45 | INFO | Service healthy | cpu=43% mem=66% disk=27%
+2026-01-26 20:59:47 | INFO | API endpoint responded | latency=158ms cpu=29%
+2026-01-26 20:59:49 | INFO | Health check passed | cpu=51% mem=69% disk=41%
+2026-01-26 20:59:50 | INFO | Health check passed | cpu=48% mem=49% disk=22%
+2026-01-26 20:59:51 | INFO | API endpoint responded | latency=130ms cpu=28%
+2026-01-26 20:59:53 | INFO | Background job completed | cpu=47% mem=54%
+2026-01-26 20:59:55 | INFO | Request processed successfully | cpu=41% mem=39%
+2026-01-26 20:59:56 | INFO | Request processed successfully | cpu=19% mem=66%
+2026-01-26 20:59:58 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 20:59:59 | INFO | Service healthy | cpu=32% mem=43% disk=60%
+2026-01-26 21:00:01 | INFO | Request processed successfully | cpu=30% mem=30%
+2026-01-26 21:00:02 | INFO | Service healthy | cpu=29% mem=51% disk=23%
+2026-01-26 21:00:04 | INFO | Service healthy | cpu=47% mem=68% disk=21%
+2026-01-26 21:00:05 | INFO | Service healthy | cpu=31% mem=54% disk=47%
+2026-01-26 21:00:06 | INFO | Background job completed | cpu=26% mem=52%
+2026-01-26 21:00:08 | INFO | Health check passed | cpu=22% mem=64% disk=57%
+2026-01-26 21:00:09 | INFO | Request processed successfully | cpu=11% mem=37%
+2026-01-26 21:00:11 | INFO | Health check passed | cpu=46% mem=30% disk=56%
+2026-01-26 21:00:12 | ERROR | System performance degraded | cpu=85% load_avg=4.36
+2026-01-26 21:00:14 | INFO | Background job completed | cpu=14% mem=61%
+2026-01-26 21:00:15 | INFO | API endpoint responded | latency=193ms cpu=14%
+2026-01-26 21:00:17 | ERROR | System performance degraded | cpu=91% load_avg=7.90
+2026-01-26 21:00:18 | INFO | Request processed successfully | cpu=32% mem=42%
+2026-01-26 21:00:20 | INFO | Health check passed | cpu=45% mem=31% disk=57%
+2026-01-26 21:00:22 | INFO | Background job completed | cpu=56% mem=44%
+2026-01-26 21:00:23 | INFO | Request processed successfully | cpu=49% mem=37%
+2026-01-26 21:00:25 | INFO | API endpoint responded | latency=159ms cpu=54%
+2026-01-26 21:00:27 | INFO | API endpoint responded | latency=126ms cpu=27%
+2026-01-26 21:00:29 | INFO | Service healthy | cpu=54% mem=53% disk=28%
+2026-01-26 21:00:30 | INFO | API endpoint responded | latency=75ms cpu=59%
+2026-01-26 21:00:31 | INFO | Health check passed | cpu=35% mem=45% disk=49%
+2026-01-26 21:00:32 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 21:00:34 | INFO | Health check passed | cpu=60% mem=35% disk=31%
+2026-01-26 21:00:36 | INFO | Service healthy | cpu=39% mem=53% disk=21%
+2026-01-26 21:00:37 | INFO | Service healthy | cpu=44% mem=58% disk=55%
+2026-01-26 21:00:38 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 21:00:40 | INFO | Health check passed | cpu=11% mem=43% disk=42%
+2026-01-26 21:00:41 | INFO | API endpoint responded | latency=159ms cpu=50%
+2026-01-26 21:00:43 | INFO | Background job completed | cpu=13% mem=60%
+2026-01-26 21:00:44 | INFO | Request processed successfully | cpu=19% mem=32%
+2026-01-26 21:00:45 | INFO | Request processed successfully | cpu=23% mem=47%
+2026-01-26 21:00:47 | INFO | Service healthy | cpu=52% mem=61% disk=46%
+2026-01-26 21:00:49 | INFO | Health check passed | cpu=15% mem=48% disk=25%
+2026-01-26 21:00:51 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 21:00:53 | INFO | Health check passed | cpu=49% mem=34% disk=58%
+2026-01-26 21:00:55 | INFO | Health check passed | cpu=59% mem=66% disk=38%
+2026-01-26 21:00:56 | INFO | API endpoint responded | latency=94ms cpu=33%
+2026-01-26 21:00:58 | INFO | API endpoint responded | latency=144ms cpu=52%
+2026-01-26 21:01:00 | INFO | Health check passed | cpu=31% mem=33% disk=55%
+2026-01-26 21:01:01 | INFO | Request processed successfully | cpu=50% mem=50%
+2026-01-26 21:01:02 | INFO | Request processed successfully | cpu=57% mem=64%
+2026-01-26 21:01:04 | INFO | Health check passed | cpu=33% mem=30% disk=25%
+2026-01-26 21:01:06 | INFO | Health check passed | cpu=59% mem=61% disk=51%
+2026-01-26 21:01:08 | ERROR | High CPU usage warning | cpu=88% process=api_server mem=85%
+2026-01-26 21:01:09 | INFO | API endpoint responded | latency=93ms cpu=51%
+2026-01-26 21:01:11 | INFO | API endpoint responded | latency=69ms cpu=52%
+2026-01-26 21:01:12 | INFO | Service healthy | cpu=28% mem=42% disk=54%
+2026-01-26 21:01:13 | INFO | API endpoint responded | latency=53ms cpu=45%
+2026-01-26 21:01:15 | INFO | Background job completed | cpu=33% mem=41%
+2026-01-26 21:01:17 | INFO | Background job completed | cpu=49% mem=45%
+2026-01-26 21:01:19 | INFO | Service healthy | cpu=54% mem=69% disk=56%
+2026-01-26 21:01:20 | INFO | Background job completed | cpu=35% mem=62%
+2026-01-26 21:01:22 | INFO | Background job completed | cpu=11% mem=45%
+2026-01-26 21:01:24 | INFO | Health check passed | cpu=33% mem=57% disk=56%
+2026-01-26 21:01:25 | INFO | Request processed successfully | cpu=34% mem=66%
+2026-01-26 21:01:26 | INFO | Service healthy | cpu=53% mem=47% disk=43%
+2026-01-26 21:01:28 | INFO | Service healthy | cpu=42% mem=43% disk=45%
+2026-01-26 21:01:30 | INFO | Health check passed | cpu=36% mem=63% disk=22%
+2026-01-26 21:01:31 | INFO | Service healthy | cpu=20% mem=45% disk=49%
+2026-01-26 21:01:33 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 21:01:34 | INFO | Service healthy | cpu=12% mem=58% disk=37%
+2026-01-26 21:01:36 | INFO | Service healthy | cpu=14% mem=69% disk=33%
+2026-01-26 21:01:37 | INFO | Background job completed | cpu=32% mem=33%
+2026-01-26 21:01:39 | INFO | Service healthy | cpu=19% mem=64% disk=49%
+2026-01-26 21:01:40 | INFO | API endpoint responded | latency=70ms cpu=20%
+2026-01-26 21:01:41 | INFO | Health check passed | cpu=49% mem=39% disk=38%
+2026-01-26 21:01:43 | INFO | Service healthy | cpu=38% mem=39% disk=52%
+2026-01-26 21:01:44 | INFO | Service healthy | cpu=16% mem=54% disk=48%
+2026-01-26 21:01:46 | INFO | Health check passed | cpu=22% mem=32% disk=52%
+2026-01-26 21:01:48 | INFO | Background job completed | cpu=50% mem=68%
+2026-01-26 21:01:49 | INFO | API endpoint responded | latency=200ms cpu=51%
+2026-01-26 21:01:50 | INFO | Health check passed | cpu=58% mem=35% disk=47%
+2026-01-26 21:01:52 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 21:01:53 | INFO | Request processed successfully | cpu=18% mem=52%
+2026-01-26 21:01:55 | INFO | Request processed successfully | cpu=33% mem=57%
+2026-01-26 21:01:57 | INFO | Request processed successfully | cpu=29% mem=52%
+2026-01-26 21:01:58 | INFO | API endpoint responded | latency=51ms cpu=35%
+2026-01-26 21:01:59 | INFO | Request processed successfully | cpu=44% mem=68%
+2026-01-26 21:02:01 | INFO | Health check passed | cpu=52% mem=37% disk=43%
+2026-01-26 21:02:02 | INFO | Service healthy | cpu=52% mem=36% disk=35%
+2026-01-26 21:02:03 | INFO | Request processed successfully | cpu=28% mem=39%
+2026-01-26 21:02:05 | INFO | Service healthy | cpu=11% mem=65% disk=60%
+2026-01-26 21:02:07 | INFO | API endpoint responded | latency=57ms cpu=44%
+2026-01-26 21:02:08 | INFO | Request processed successfully | cpu=13% mem=60%
+2026-01-26 21:02:10 | INFO | Service healthy | cpu=47% mem=45% disk=30%
+2026-01-26 21:02:11 | INFO | Service healthy | cpu=41% mem=59% disk=52%
+2026-01-26 21:02:13 | INFO | Health check passed | cpu=37% mem=66% disk=26%
+2026-01-26 21:02:15 | INFO | Health check passed | cpu=34% mem=68% disk=46%
+2026-01-26 21:02:16 | INFO | Background job completed | cpu=14% mem=37%
+2026-01-26 21:02:17 | INFO | Health check passed | cpu=55% mem=31% disk=30%
+2026-01-26 21:02:19 | INFO | API endpoint responded | latency=163ms cpu=25%
+2026-01-26 21:02:21 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 21:02:23 | INFO | API endpoint responded | latency=174ms cpu=49%
+2026-01-26 21:02:25 | INFO | Background job completed | cpu=32% mem=44%
+2026-01-26 21:02:26 | INFO | Service healthy | cpu=50% mem=66% disk=25%
+2026-01-26 21:02:27 | INFO | Request processed successfully | cpu=13% mem=52%
+2026-01-26 21:02:29 | INFO | Service healthy | cpu=10% mem=57% disk=49%
+2026-01-26 21:02:30 | INFO | API endpoint responded | latency=61ms cpu=22%
+2026-01-26 21:02:31 | INFO | Background job completed | cpu=59% mem=62%
+2026-01-26 21:02:33 | INFO | Health check passed | cpu=27% mem=67% disk=31%
+2026-01-26 21:02:35 | INFO | Health check passed | cpu=39% mem=41% disk=39%
+2026-01-26 21:02:36 | INFO | API endpoint responded | latency=63ms cpu=43%
+2026-01-26 21:02:38 | INFO | Request processed successfully | cpu=41% mem=59%
+2026-01-26 21:02:40 | INFO | Service healthy | cpu=55% mem=65% disk=53%
+2026-01-26 21:02:42 | INFO | API endpoint responded | latency=140ms cpu=51%
+2026-01-26 21:02:44 | INFO | Background job completed | cpu=21% mem=55%
+2026-01-26 21:02:45 | INFO | Service healthy | cpu=41% mem=50% disk=45%
+2026-01-26 21:02:46 | INFO | Service healthy | cpu=17% mem=67% disk=22%
+2026-01-26 21:02:48 | INFO | Health check passed | cpu=33% mem=36% disk=55%
+2026-01-26 21:02:49 | INFO | Request processed successfully | cpu=10% mem=40%
+2026-01-26 21:02:51 | INFO | Health check passed | cpu=46% mem=45% disk=22%
+2026-01-26 21:02:53 | INFO | API endpoint responded | latency=61ms cpu=28%
+2026-01-26 21:02:54 | INFO | Service healthy | cpu=18% mem=49% disk=25%
+2026-01-26 21:02:56 | INFO | API endpoint responded | latency=63ms cpu=18%
+2026-01-26 21:02:57 | INFO | Background job completed | cpu=42% mem=59%
+2026-01-26 21:02:59 | INFO | Service healthy | cpu=59% mem=32% disk=21%
+2026-01-26 21:03:00 | INFO | Background job completed | cpu=55% mem=44%
+2026-01-26 21:03:02 | INFO | Background job completed | cpu=48% mem=54%
+2026-01-26 21:03:04 | INFO | Health check passed | cpu=15% mem=70% disk=33%
+2026-01-26 21:03:05 | INFO | Health check passed | cpu=25% mem=70% disk=44%
+2026-01-26 21:03:06 | INFO | Health check passed | cpu=32% mem=47% disk=46%
+2026-01-26 21:03:08 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 21:03:10 | INFO | Background job completed | cpu=14% mem=36%
+2026-01-26 21:03:12 | INFO | Request processed successfully | cpu=11% mem=44%
+2026-01-26 21:03:14 | ERROR | CPU overload detected | cpu=89% mem=72% threshold=80%
+2026-01-26 21:03:15 | INFO | Background job completed | cpu=55% mem=31%
+2026-01-26 21:03:16 | INFO | Background job completed | cpu=29% mem=34%
+2026-01-26 21:03:18 | INFO | Request processed successfully | cpu=37% mem=31%
+2026-01-26 21:03:19 | INFO | API endpoint responded | latency=154ms cpu=45%
+2026-01-26 21:03:21 | INFO | Health check passed | cpu=38% mem=44% disk=25%
+2026-01-26 21:03:22 | INFO | Health check passed | cpu=38% mem=59% disk=29%
+2026-01-26 21:03:24 | INFO | API endpoint responded | latency=190ms cpu=29%
+2026-01-26 21:03:25 | INFO | API endpoint responded | latency=63ms cpu=56%
+2026-01-26 21:03:27 | INFO | Background job completed | cpu=46% mem=68%
+2026-01-26 21:03:28 | INFO | Service healthy | cpu=26% mem=31% disk=51%
+2026-01-26 21:03:29 | INFO | Service healthy | cpu=56% mem=51% disk=27%
+2026-01-26 21:03:30 | INFO | API endpoint responded | latency=137ms cpu=45%
+2026-01-26 21:03:32 | INFO | Background job completed | cpu=52% mem=57%
+2026-01-26 21:03:33 | INFO | API endpoint responded | latency=105ms cpu=14%
+2026-01-26 21:03:35 | INFO | Health check passed | cpu=11% mem=40% disk=32%
+2026-01-26 21:03:36 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 21:03:38 | INFO | Health check passed | cpu=17% mem=69% disk=49%
+2026-01-26 21:03:39 | INFO | API endpoint responded | latency=95ms cpu=11%
+2026-01-26 21:03:41 | INFO | Request processed successfully | cpu=25% mem=57%
+2026-01-26 21:03:42 | INFO | Background job completed | cpu=18% mem=64%
+2026-01-26 21:03:43 | INFO | Request processed successfully | cpu=25% mem=37%
+2026-01-26 21:03:44 | INFO | Background job completed | cpu=34% mem=63%
+2026-01-26 21:03:45 | INFO | API endpoint responded | latency=56ms cpu=53%
+2026-01-26 21:03:47 | INFO | Health check passed | cpu=43% mem=39% disk=32%
+2026-01-26 21:03:49 | INFO | API endpoint responded | latency=64ms cpu=49%
+2026-01-26 21:03:51 | INFO | Request processed successfully | cpu=57% mem=51%
+2026-01-26 21:03:52 | INFO | Health check passed | cpu=36% mem=65% disk=46%
+2026-01-26 21:03:54 | INFO | Request processed successfully | cpu=53% mem=48%
+2026-01-26 21:03:56 | INFO | Background job completed | cpu=46% mem=55%
+2026-01-26 21:03:58 | INFO | Health check passed | cpu=36% mem=46% disk=43%
+2026-01-26 21:03:59 | INFO | Health check passed | cpu=38% mem=45% disk=41%
+2026-01-26 21:04:01 | INFO | Health check passed | cpu=32% mem=36% disk=20%
+2026-01-26 21:04:02 | INFO | Request processed successfully | cpu=17% mem=67%
+2026-01-26 21:04:03 | INFO | API endpoint responded | latency=159ms cpu=44%
+2026-01-26 21:04:05 | INFO | Background job completed | cpu=14% mem=50%
+2026-01-26 21:04:06 | INFO | Service healthy | cpu=48% mem=55% disk=27%
+2026-01-26 21:04:07 | INFO | Service healthy | cpu=45% mem=33% disk=30%
+2026-01-26 21:04:08 | INFO | Health check passed | cpu=37% mem=50% disk=48%
+2026-01-26 21:04:09 | INFO | Service healthy | cpu=31% mem=40% disk=29%
+2026-01-26 21:04:11 | INFO | API endpoint responded | latency=198ms cpu=35%
+2026-01-26 21:04:12 | INFO | Background job completed | cpu=17% mem=69%
+2026-01-26 21:04:14 | INFO | Request processed successfully | cpu=43% mem=50%
+2026-01-26 21:04:16 | INFO | API endpoint responded | latency=105ms cpu=30%
+2026-01-26 21:04:17 | INFO | Background job completed | cpu=59% mem=41%
+2026-01-26 21:04:18 | INFO | Request processed successfully | cpu=15% mem=43%
+2026-01-26 21:04:20 | INFO | API endpoint responded | latency=113ms cpu=26%
+2026-01-26 21:04:21 | INFO | Background job completed | cpu=52% mem=57%
+2026-01-26 21:04:23 | INFO | API endpoint responded | latency=129ms cpu=44%
+2026-01-26 21:04:24 | INFO | Background job completed | cpu=54% mem=35%
+2026-01-26 21:04:25 | INFO | Request processed successfully | cpu=54% mem=70%
+2026-01-26 21:04:27 | INFO | Service healthy | cpu=55% mem=65% disk=46%
+2026-01-26 21:04:28 | INFO | Service healthy | cpu=36% mem=31% disk=51%
+2026-01-26 21:04:30 | INFO | Request processed successfully | cpu=59% mem=70%
+2026-01-26 21:04:32 | INFO | Health check passed | cpu=30% mem=66% disk=46%
+2026-01-26 21:04:33 | INFO | API endpoint responded | latency=200ms cpu=16%
+2026-01-26 21:04:34 | INFO | Service healthy | cpu=38% mem=55% disk=41%
+2026-01-26 21:04:36 | INFO | API endpoint responded | latency=128ms cpu=12%
+2026-01-26 21:04:37 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 21:04:38 | INFO | Background job completed | cpu=14% mem=35%
+2026-01-26 21:04:39 | INFO | Health check passed | cpu=24% mem=67% disk=52%
+2026-01-26 21:04:41 | INFO | API endpoint responded | latency=57ms cpu=55%
+2026-01-26 21:04:42 | INFO | Service healthy | cpu=22% mem=66% disk=54%
+2026-01-26 21:04:44 | INFO | Request processed successfully | cpu=56% mem=44%
+2026-01-26 21:04:45 | INFO | Health check passed | cpu=13% mem=60% disk=34%
+2026-01-26 21:04:47 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 21:04:49 | INFO | Request processed successfully | cpu=47% mem=58%
+2026-01-26 21:04:50 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 21:04:51 | INFO | Request processed successfully | cpu=15% mem=62%
+2026-01-26 21:04:53 | INFO | Health check passed | cpu=30% mem=34% disk=56%
+2026-01-26 21:04:54 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 21:04:55 | INFO | API endpoint responded | latency=54ms cpu=33%
+2026-01-26 21:04:56 | ERROR | System performance degraded | cpu=99% load_avg=6.12
+2026-01-26 21:04:58 | INFO | Service healthy | cpu=20% mem=31% disk=44%
+2026-01-26 21:05:00 | INFO | Background job completed | cpu=14% mem=33%
+2026-01-26 21:05:01 | INFO | Service healthy | cpu=13% mem=46% disk=58%
+2026-01-26 21:05:03 | INFO | Background job completed | cpu=59% mem=54%
+2026-01-26 21:05:04 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 21:05:05 | INFO | API endpoint responded | latency=113ms cpu=27%
+2026-01-26 21:05:07 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 21:05:08 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 21:05:10 | INFO | API endpoint responded | latency=193ms cpu=22%
+2026-01-26 21:05:11 | INFO | Service healthy | cpu=53% mem=38% disk=49%
+2026-01-26 21:05:12 | INFO | Request processed successfully | cpu=57% mem=49%
+2026-01-26 21:05:14 | INFO | Health check passed | cpu=56% mem=43% disk=32%
+2026-01-26 21:05:15 | INFO | Background job completed | cpu=11% mem=53%
+2026-01-26 21:05:17 | INFO | Health check passed | cpu=59% mem=69% disk=48%
+2026-01-26 21:05:18 | INFO | API endpoint responded | latency=143ms cpu=20%
+2026-01-26 21:05:19 | INFO | Service healthy | cpu=25% mem=39% disk=33%
+2026-01-26 21:05:21 | INFO | API endpoint responded | latency=156ms cpu=56%
+2026-01-26 21:05:23 | INFO | Request processed successfully | cpu=29% mem=36%
+2026-01-26 21:05:25 | INFO | API endpoint responded | latency=153ms cpu=29%
+2026-01-26 21:05:26 | ERROR | CPU overload detected | cpu=89% mem=70% threshold=80%
+2026-01-26 21:05:28 | INFO | Health check passed | cpu=34% mem=41% disk=49%
+2026-01-26 21:05:30 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 21:05:31 | INFO | API endpoint responded | latency=74ms cpu=52%
+2026-01-26 21:05:32 | INFO | Health check passed | cpu=54% mem=54% disk=23%
+2026-01-26 21:05:34 | INFO | Request processed successfully | cpu=57% mem=31%
+2026-01-26 21:05:36 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 21:05:37 | INFO | API endpoint responded | latency=82ms cpu=32%
+2026-01-26 21:05:38 | INFO | Request processed successfully | cpu=40% mem=66%
+2026-01-26 21:05:40 | INFO | Service healthy | cpu=46% mem=50% disk=20%
+2026-01-26 21:05:41 | INFO | API endpoint responded | latency=99ms cpu=17%
+2026-01-26 21:05:43 | INFO | Request processed successfully | cpu=47% mem=54%
+2026-01-26 21:05:44 | INFO | Request processed successfully | cpu=25% mem=68%
+2026-01-26 21:05:45 | INFO | Request processed successfully | cpu=47% mem=59%
+2026-01-26 21:05:47 | INFO | Service healthy | cpu=27% mem=30% disk=60%
+2026-01-26 21:05:49 | INFO | Service healthy | cpu=25% mem=64% disk=58%
+2026-01-26 21:05:51 | INFO | Service healthy | cpu=15% mem=49% disk=39%
+2026-01-26 21:05:52 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 21:05:54 | INFO | Service healthy | cpu=59% mem=33% disk=34%
+2026-01-26 21:05:56 | INFO | API endpoint responded | latency=54ms cpu=56%
+2026-01-26 21:05:58 | INFO | Request processed successfully | cpu=42% mem=59%
+2026-01-26 21:05:59 | INFO | Background job completed | cpu=28% mem=59%
+2026-01-26 21:06:01 | INFO | Background job completed | cpu=59% mem=58%
+2026-01-26 21:06:03 | INFO | Health check passed | cpu=57% mem=33% disk=33%
+2026-01-26 21:06:04 | INFO | API endpoint responded | latency=134ms cpu=57%
+2026-01-26 21:06:05 | INFO | API endpoint responded | latency=166ms cpu=46%
+2026-01-26 21:06:06 | INFO | Request processed successfully | cpu=53% mem=48%
+2026-01-26 21:06:08 | INFO | Request processed successfully | cpu=17% mem=35%
+2026-01-26 21:06:09 | INFO | Background job completed | cpu=15% mem=40%
+2026-01-26 21:06:10 | INFO | Health check passed | cpu=32% mem=30% disk=50%
+2026-01-26 21:06:12 | INFO | API endpoint responded | latency=76ms cpu=34%
+2026-01-26 21:06:13 | ERROR | High CPU usage warning | cpu=98% process=api_server mem=77%
+2026-01-26 21:06:15 | INFO | Background job completed | cpu=23% mem=59%
+2026-01-26 21:06:17 | INFO | Background job completed | cpu=37% mem=45%
+2026-01-26 21:06:18 | INFO | API endpoint responded | latency=147ms cpu=35%
+2026-01-26 21:06:20 | INFO | Service healthy | cpu=56% mem=66% disk=45%
+2026-01-26 21:06:21 | INFO | Health check passed | cpu=21% mem=38% disk=21%
+2026-01-26 21:06:23 | INFO | API endpoint responded | latency=77ms cpu=44%
+2026-01-26 21:06:24 | INFO | Service healthy | cpu=10% mem=64% disk=24%
+2026-01-26 21:06:25 | INFO | Service healthy | cpu=58% mem=31% disk=56%
+2026-01-26 21:06:27 | INFO | Service healthy | cpu=10% mem=32% disk=46%
+2026-01-26 21:06:29 | INFO | API endpoint responded | latency=102ms cpu=33%
+2026-01-26 21:06:30 | INFO | Health check passed | cpu=57% mem=68% disk=59%
+2026-01-26 21:06:32 | INFO | API endpoint responded | latency=170ms cpu=15%
+2026-01-26 21:06:33 | INFO | API endpoint responded | latency=160ms cpu=59%
+2026-01-26 21:06:35 | INFO | Request processed successfully | cpu=57% mem=69%
+2026-01-26 21:06:36 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 21:06:37 | INFO | Request processed successfully | cpu=25% mem=68%
+2026-01-26 21:06:39 | INFO | Background job completed | cpu=51% mem=40%
+2026-01-26 21:06:40 | INFO | Service healthy | cpu=59% mem=53% disk=48%
+2026-01-26 21:06:41 | INFO | API endpoint responded | latency=69ms cpu=13%
+2026-01-26 21:06:43 | INFO | Request processed successfully | cpu=56% mem=34%
+2026-01-26 21:06:45 | INFO | Health check passed | cpu=53% mem=33% disk=60%
+2026-01-26 21:06:46 | INFO | Service healthy | cpu=12% mem=32% disk=39%
+2026-01-26 21:06:47 | INFO | Service healthy | cpu=42% mem=58% disk=57%
+2026-01-26 21:06:48 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 21:06:49 | INFO | Service healthy | cpu=27% mem=46% disk=25%
+2026-01-26 21:06:51 | INFO | Background job completed | cpu=35% mem=60%
+2026-01-26 21:06:52 | INFO | Health check passed | cpu=52% mem=61% disk=35%
+2026-01-26 21:06:54 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 21:06:55 | INFO | Health check passed | cpu=50% mem=70% disk=57%
+2026-01-26 21:06:57 | INFO | Health check passed | cpu=45% mem=31% disk=60%
+2026-01-26 21:06:59 | INFO | API endpoint responded | latency=111ms cpu=20%
+2026-01-26 21:07:00 | INFO | Background job completed | cpu=49% mem=57%
+2026-01-26 21:07:01 | INFO | API endpoint responded | latency=155ms cpu=22%
+2026-01-26 21:07:02 | INFO | Request processed successfully | cpu=35% mem=42%
+2026-01-26 21:07:04 | ERROR | Connection pool exhausted | active_connections=100 max_connections=100
+2026-01-26 21:07:06 | INFO | Background job completed | cpu=50% mem=68%
+2026-01-26 21:07:07 | INFO | Background job completed | cpu=34% mem=53%
+2026-01-26 21:07:09 | INFO | API endpoint responded | latency=107ms cpu=55%
+2026-01-26 21:07:10 | INFO | Service healthy | cpu=51% mem=51% disk=20%
+2026-01-26 21:07:12 | INFO | Request processed successfully | cpu=60% mem=62%
+2026-01-26 21:07:14 | INFO | API endpoint responded | latency=80ms cpu=30%
+2026-01-26 21:07:15 | INFO | Background job completed | cpu=14% mem=58%
+2026-01-26 21:07:17 | INFO | Service healthy | cpu=38% mem=53% disk=32%
+2026-01-26 21:07:18 | INFO | Background job completed | cpu=29% mem=64%
+2026-01-26 21:07:19 | INFO | Service healthy | cpu=14% mem=63% disk=57%
+2026-01-26 21:07:21 | INFO | Request processed successfully | cpu=35% mem=37%
+2026-01-26 21:07:22 | INFO | API endpoint responded | latency=85ms cpu=51%
+2026-01-26 21:07:23 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
+2026-01-26 21:07:25 | INFO | Service healthy | cpu=10% mem=50% disk=57%
+2026-01-26 21:07:27 | INFO | Request processed successfully | cpu=60% mem=53%
+2026-01-26 21:07:28 | INFO | Service healthy | cpu=11% mem=30% disk=39%
+2026-01-26 21:07:29 | INFO | Background job completed | cpu=52% mem=55%
+2026-01-26 21:07:31 | INFO | Health check passed | cpu=28% mem=58% disk=47%
+2026-01-26 21:07:33 | INFO | Health check passed | cpu=27% mem=35% disk=27%
+2026-01-26 21:07:34 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 21:07:35 | INFO | API endpoint responded | latency=173ms cpu=60%
+2026-01-26 21:07:36 | INFO | API endpoint responded | latency=133ms cpu=36%
+2026-01-26 21:07:38 | INFO | API endpoint responded | latency=135ms cpu=30%
+2026-01-26 21:07:40 | INFO | Service healthy | cpu=58% mem=41% disk=44%
+2026-01-26 21:07:41 | INFO | Background job completed | cpu=16% mem=45%
+2026-01-26 21:07:43 | INFO | Health check passed | cpu=21% mem=41% disk=47%
+2026-01-26 21:07:44 | ERROR | CPU overload detected | cpu=99% mem=68% threshold=80%
+2026-01-26 21:07:46 | INFO | Service healthy | cpu=55% mem=39% disk=28%
+2026-01-26 21:07:47 | INFO | Service healthy | cpu=26% mem=46% disk=50%
+2026-01-26 21:07:49 | INFO | Background job completed | cpu=38% mem=56%
+2026-01-26 21:07:50 | ERROR | Database authentication failed | user=app_user error=invalid_credentials
+2026-01-26 21:07:52 | INFO | Health check passed | cpu=41% mem=55% disk=22%
+2026-01-26 21:07:53 | INFO | Request processed successfully | cpu=57% mem=55%
+2026-01-26 21:07:55 | INFO | API endpoint responded | latency=126ms cpu=59%
+2026-01-26 21:07:56 | INFO | Service healthy | cpu=33% mem=38% disk=28%
+2026-01-26 21:07:58 | INFO | API endpoint responded | latency=60ms cpu=13%
+2026-01-26 21:07:59 | INFO | Request processed successfully | cpu=25% mem=56%
+2026-01-26 21:08:00 | INFO | Health check passed | cpu=39% mem=34% disk=58%
+2026-01-26 21:08:02 | INFO | Background job completed | cpu=39% mem=50%
+2026-01-26 21:08:03 | INFO | Service healthy | cpu=41% mem=31% disk=35%
+2026-01-26 21:08:05 | INFO | Health check passed | cpu=51% mem=44% disk=54%
+2026-01-26 21:08:07 | INFO | Health check passed | cpu=49% mem=45% disk=20%
+2026-01-26 21:08:08 | INFO | Service healthy | cpu=25% mem=47% disk=53%
+2026-01-26 21:08:09 | INFO | Service healthy | cpu=36% mem=45% disk=55%
+2026-01-26 21:08:10 | INFO | Service healthy | cpu=33% mem=34% disk=24%
+2026-01-26 21:08:11 | INFO | Background job completed | cpu=28% mem=68%
+2026-01-26 21:08:13 | INFO | Service healthy | cpu=36% mem=47% disk=27%
+2026-01-26 21:08:14 | INFO | Health check passed | cpu=17% mem=46% disk=29%
+2026-01-26 21:08:16 | INFO | Request processed successfully | cpu=24% mem=65%
+2026-01-26 21:08:18 | INFO | Service healthy | cpu=31% mem=46% disk=54%
+2026-01-26 21:08:19 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 21:08:21 | INFO | Background job completed | cpu=11% mem=50%
+2026-01-26 21:08:22 | INFO | Service healthy | cpu=31% mem=55% disk=48%
+2026-01-26 21:08:24 | INFO | Background job completed | cpu=60% mem=30%
+2026-01-26 21:08:25 | ERROR | Failed to connect to database | host=db.example.com retries=3
+2026-01-26 21:08:26 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 21:08:27 | INFO | Request processed successfully | cpu=18% mem=67%
+2026-01-26 21:08:29 | INFO | Request processed successfully | cpu=17% mem=38%
+2026-01-26 21:08:31 | INFO | Health check passed | cpu=33% mem=43% disk=52%
+2026-01-26 21:08:32 | INFO | Background job completed | cpu=28% mem=47%
+2026-01-26 21:08:33 | INFO | Health check passed | cpu=45% mem=66% disk=58%
+2026-01-26 21:08:35 | ERROR | Database connection timeout | host=db.example.com port=5432
+2026-01-26 21:08:36 | ERROR | CPU overload detected | cpu=88% mem=90% threshold=80%
+2026-01-26 21:08:38 | INFO | Request processed successfully | cpu=24% mem=55%
+2026-01-26 21:08:39 | INFO | Service healthy | cpu=39% mem=40% disk=47%
+2026-01-26 21:08:41 | ERROR | CPU threshold exceeded | cpu=98% duration=30s mem=63%
+2026-01-26 21:08:43 | ERROR | Database connection refused | host=db.example.com error=ECONNREFUSED
