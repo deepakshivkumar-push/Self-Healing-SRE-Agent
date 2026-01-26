@@ -35,7 +35,7 @@ A rule-based self-healing system that automatically detects and remediates infra
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/self-healing-sre-agent.git
+git clone https://github.com/deepakshivkumar-push/self-healing-sre-agent.git
 cd self-healing-sre-agent
 
 # Install dependencies
@@ -128,7 +128,7 @@ Deepak Shiv Kumar
 ---
 
 - GitHub: https://github.com/deepakshivkumar-push
-- LinkedIn: https://linkedin.com/in/deepak-shiv-kumar
+- LinkedIn: https://www.linkedin.com/in/deepak-shiv-kumar-a88a892bb/
 
 ---
 
