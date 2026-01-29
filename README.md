@@ -2,7 +2,6 @@
 
 A rule-based self-healing system that automatically detects and remediates infrastructure anomalies in real-time. Built for demonstrating SRE automation principles.
 
-![Dashboard Preview](docs/dashboard-screenshot.png)
 
 ## 🎯 What It Does
 
