@@ -1,0 +1,10 @@
+services:
+  sre-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: self-healing-sre-agent:local
+    env_file:
+      - .env
+    command: ["--iterations", "30"]
+    restart: unless-stopped

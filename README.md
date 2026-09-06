@@ -1,134 +1,77 @@
-# 🏥 Self-Healing SRE Agent
+# Self-Healing SRE Agent
 
-A rule-based self-healing system that automatically detects and remediates infrastructure anomalies in real-time. Built for demonstrating SRE automation principles.
+Production-ready Python service that ingests metrics, detects anomalies in near real-time, and routes safe remediation actions.
 
+## Architecture
 
-## 🎯 What It Does
+- **Ingestion**: pluggable metric stream provider (`ingestion.py`, synthetic demo included)
+- **Detection**: z-score baseline detector with rolling windows (`detector.py`)
+- **Remediation**: extensible handler router with safe mock defaults (`remediation.py`)
+- **Configuration**: environment-driven settings with `.env` support (`config.py`)
+- **Entrypoint**: CLI service (`sre-agent`)
 
-- **Detects** database connection failures and CPU overload events from system logs
-- **Heals** automatically by restarting services and triggering auto-scaling
-- **Visualizes** healing events through a real-time Streamlit dashboard
+Project layout:
 
-## 🏗️ Architecture
+```text
+src/self_healing_sre_agent/
+  cli.py
+  config.py
+  detector.py
+  ingestion.py
+  models.py
+  remediation.py
+  service.py
+tests/
+.github/workflows/
 ```
-┌─────────────────┐      ┌──────────────────┐      ┌─────────────────┐
-│  Log Generator  │─────▶│  Healing Agent   │─────▶│    Dashboard    │
-│    (app.py)     │      │    (agent.py)    │      │ (dashboard.py)  │
-└─────────────────┘      └──────────────────┘      └─────────────────┘
-        │                         │                          │
-        ▼                         ▼                          ▼
-   system.log            healed_incidents.log          Streamlit UI
-```
 
-**Components:**
-1. **Log Generator** - Simulates system logs with anomalies (DB errors, CPU spikes)
-2. **Healing Agent** - Monitors logs, detects issues, performs remediation
-3. **Dashboard** - Real-time visualization of healing events
+## Quickstart (local)
 
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.8+
-- pip
-
-### Installation
 ```bash
-# Clone the repository
-git clone https://github.com/deepakshivkumar-push/self-healing-sre-agent.git
-cd self-healing-sre-agent
-
-# Install dependencies
-pip install -r requirements.txt
+cp .env.example .env
+make setup
+make demo
 ```
 
-### Running the System
+Run continuously:
 
-**Terminal 1** - Start log generator:
 ```bash
-python app.py
+make run
 ```
 
-**Terminal 2** - Start healing agent:
+## Docker
+
 ```bash
-python agent.py
+docker build -t self-healing-sre-agent:local .
+docker run --rm --env-file .env self-healing-sre-agent:local
 ```
 
-**Terminal 3** - Start dashboard:
+With compose:
+
 ```bash
-streamlit run dashboard.py
+docker compose up --build
 ```
 
-Open your browser to `http://localhost:8501` to view the dashboard.
+## Configuration
 
-## 📊 Demo
+Use `.env` (see `.env.example`):
 
-### Dashboard Features
-- **Real-time metrics**: Total incidents healed, breakdown by type
-- **Event timeline**: Recent healing actions with timestamps
-- **Auto-refresh**: Updates every 2 seconds
+- `POLLING_INTERVAL_SECONDS`: loop interval
+- `ANOMALY_WINDOW_SIZE`, `ANOMALY_MIN_SAMPLES`, `ANOMALY_ZSCORE_THRESHOLD`: detector tuning
+- `MAX_ITERATIONS`: demo bounded run (`0` means infinite)
+- `ALLOW_LIVE_REMEDIATION`: safety gate for non-dry-run execution
 
-### Example Healing Flow
-1. Log generator produces: `ERROR | CPU overload detected | cpu=94%`
-2. Agent detects anomaly using pattern matching
-3. Agent simulates remediation (cleanup + auto-scaling)
-4. Dashboard displays: `SUCCESS: CPU_ERROR - Cleaned up processes and triggered auto-scaling`
+## CI/CD
 
-## 🛠️ Technical Details
+- **CI** (`.github/workflows/ci.yml`): lint, format check, mypy, pytest, Docker build validation on PRs/pushes to `main`
+- **CD** (`.github/workflows/cd.yml`): builds and pushes image to GHCR on version tags (`v*`) or manual dispatch, plus deploy job scaffold
 
-### Detection Rules (Rule-Based)
-- **Database Errors**: Connection timeouts, pool exhaustion, authentication failures
-- **CPU Errors**: Usage above 80% threshold, performance degradation
+GHCR uses `GITHUB_TOKEN` with `packages: write` permission.
 
-### Tech Stack
-- **Python 3.x** - Core language
-- **Streamlit** - Dashboard framework
-- **File-based IPC** - Simple, reliable communication
-- **Regex patterns** - Anomaly detection
+## Remediation safety
 
-### Project Structure
-```
-self-healing-sre-agent/
-├── app.py                 # Log generator
-├── agent.py               # Self-healing logic
-├── dashboard.py           # Streamlit dashboard
-├── requirements.txt       # Dependencies
-├── README.md             # This file
-├── docs/                 # Documentation and screenshots
-│   └── dashboard-screenshot.png
-└── data/                 # Generated at runtime
-    ├── system.log
-    └── healed_incidents.log
-```
+By default, remediation is **dry-run only**. Set `ALLOW_LIVE_REMEDIATION=true` only after integrating and reviewing real handlers.
 
-## 🔮 Future Enhancements
+## Contributing
 
-- [ ] ML-based anomaly detection (LSTM/Isolation Forest)
-- [ ] Prometheus metrics integration
-- [ ] Docker Compose deployment
-- [ ] Slack/PagerDuty notifications
-- [ ] Historical trend analysis
-- [ ] Multi-service orchestration
-
-## 🎓 What I Learned
-
-- Designing resilient inter-process communication
-- File-based log tailing patterns (similar to `tail -f`)
-- Building production-ready monitoring dashboards
-- SRE principles: observability, automation, self-healing
-
-## 📝 License
-
-MIT License - feel free to use for learning or demonstrations.
-
-## 👤 Author
-
-Deepak Shiv Kumar
-
----
-
-- GitHub: https://github.com/deepakshivkumar-push
-- LinkedIn: https://www.linkedin.com/in/deepak-shiv-kumar-a88a892bb/
-
----
-
-⭐ **Star this repo if you found it helpful!**
+See [CONTRIBUTING.md](CONTRIBUTING.md).
